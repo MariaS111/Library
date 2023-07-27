@@ -1,0 +1,41 @@
+@import 'utils';
+
+body {
+    background-color: $black-color;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.wrapper {
+    width: 1440px; 
+    height: 100vh; 
+    background-color: $main-color;
+}
+
+header {
+    background-color: $black-color;
+    color: $main-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+
+    ul {
+        display: flex;
+        column-gap: 30px;
+        list-style: none;
+
+        a {
+            color: $main-color;
+            text-decoration: none;
+        }
+    }
+}
+
+#Welcome {
+    background-image: url('../images/Welcome.jpg');
+    height: 600px;
+}
