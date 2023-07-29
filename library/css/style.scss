@@ -11,12 +11,12 @@ body {
 
 .wrapper {
     width: 1440px; 
-    height: 100vh; 
+    // height: 100vh; 
     background-color: $main-color;
 }
 
 header {
-    background-color: $black-color;
+    background-color: $dark;
     color: $main-color;
     display: flex;
     align-items: center;
@@ -36,6 +36,90 @@ header {
 }
 
 #Welcome {
-    background-image: url('../images/Welcome.jpg');
+    background: url('../images/Welcome.jpg'), lightgray 50% / cover no-repeat;
     height: 600px;
+    position: relative;
+}
+
+main {
+    background-color: $main-color;
+}
+
+.welcome {
+    background-color: $black-color;
+    position: absolute;
+    top: 220px;
+    left: 0;
+    display: flex;
+    text-align: center;
+    width: 600px;
+    height: 220px;
+    padding: 35px 40px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    h2 {
+        flex-shrink: 0;
+        color: $main-color;
+        text-align: center;
+        font-family: Forum;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 50px; 
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    @include heading2;
+    color: $dark;
+    font-size: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $dark;
+}
+
+#About {
+    height: 837px;
+}
+
+#Favorites {
+   height: 1439px;
+}
+
+#CoffeShop{
+    height: 841px;
+}
+
+#Contacts {
+    height: 575px;
+}
+
+#LibraryCard{
+    height: 614px;
+}
+
+footer {
+    height: 250px;
+    background-color: $black-color;
+    color: $main-color;
+
+    a {
+        color: $main-color;
+        text-decoration: none;
+    }
 }
