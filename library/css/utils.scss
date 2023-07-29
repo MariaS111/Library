@@ -21,3 +21,15 @@ $beige: #BB945F;
     line-height: 40px;
     letter-spacing: 2px;
 }
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@mixin flex-col  {
+    @include flex;
+    flex-direction: column;
+    justify-content: center;
+}

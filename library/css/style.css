@@ -95,14 +95,127 @@ h2::after {
 
 #About {
   height: 837px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+#About p {
+  padding-top: 61px;
+  font-size: 20px;
+  text-align: center;
+}
+#About img {
+  width: 450px;
+  height: 560px;
+}
+#About .images-container {
+  display: flex;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+#About .btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 40px;
+}
+#About .button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  height: 26px;
+  width: 26px;
+  padding: 0;
+  cursor: pointer;
+}
+#About .button-circle {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 16px;
+  width: 16px;
+  background-color: #0C0C0E;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+p {
+  font-family: Inter;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
 }
 
 #Favorites {
   height: 1439px;
 }
+#Favorites p {
+  font-size: 20px;
+}
 
 #CoffeShop {
   height: 841px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+#CoffeShop p {
+  font-size: 20px;
+}
+#CoffeShop .heading {
+  padding-top: 41px;
+  width: 1400px;
+  text-align: center;
+}
+#CoffeShop .menu {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1400px;
+  height: 520px;
+}
+#CoffeShop h2 {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  color: #BB945F;
+}
+#CoffeShop h2::after {
+  content: none;
+}
+#CoffeShop .menu-type {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+#CoffeShop .menu-items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+#CoffeShop .menu-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#CoffeShop .price {
+  font-family: Forum;
 }
 
 #Contacts {
