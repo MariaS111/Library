@@ -148,20 +148,71 @@ p {
 
 #Favorites {
    height: 1439px;
+   padding: 0 20px;
 
-   p {
+    p {
     font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 0.6px;
    }
 
-//    p:first-child {
-//     font-weight: 700;
-//    }
+    .radio-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+    label {
+    margin-right: 90px;
+  }
+
+    input[type="radio"]:checked + label {
+    font-weight: bold;
+  }
+
+  .books {
+    @include flex;
+    padding-top: 40px;
+  }
+
+  h5 {
+    @include text;
+    font-size: 15px;
+    font-weight: 700;
+  }
+   
+  button {
+    width: 75px;
+    height: 30px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .info {
+    width: 355px;
+  }
+
+  p {
+    font-size: 15px;
+    text-transform: capitalize;
+  }
+
+  .book-info {
+    width: 550px;
+    height: 555px;
+    border: 1px solid #000;
+    position: relative;
+    @include flex-col;
+    align-items: start;
+  }
+
 }
 
 #CoffeShop{
     height: 841px;
     @include flex-col;
-    column-gap: 40px;
 
     p {
         font-size: 20px;
@@ -180,12 +231,13 @@ p {
         height: 520px;
     }
 
-    h2{
+    h3{
         @include heading2;
         color: $beige;
+        font-size: 40px;
     }
 
-    h2::after {
+    h3::after {
         content: none;
     }
      
@@ -195,10 +247,12 @@ p {
 
     .menu-items {
         @include flex-col;
+
     }
 
     .menu-item {
         @include flex;
+        text-align: left;
     }
 
     .price {
@@ -206,12 +260,146 @@ p {
     }
 }
 
+.bold {
+    font-weight: 700;
+}
+
 #Contacts {
     height: 575px;
+    @include flex-col;
+
+    .contacts {
+        padding: 40px 0;
+        @include flex;
+        justify-content: space-between;
+        width: 1400px;
+        height: 414px;
+    }
+
+    .contact-info {
+        @include flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    
+    img {
+    width: 696px;
+    height: 414px;
+    }
+}
+
+button {
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    background-color: $main-color;
+    color: $dark;
+    text-align: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
 }
 
 #LibraryCard{
+    @include flex-col;
     height: 614px;
+    padding: 0 20px;
+
+    h2{
+        padding-bottom: 41px;
+    }
+
+    .cards-info {
+       display: flex;
+       column-gap: 344px;
+    }
+
+    .find-card {
+        text-align: center;
+
+        p {
+            font-size: 30px;
+            letter-spacing: 0.6px;
+        }
+
+        form {
+            @include flex;
+            width: 600px;
+            height: 387px;
+            padding-bottom: 0px;
+            justify-content: center;
+            border: 3px solid $beige;
+            background: #FFF;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+            button{
+                display: inline-flex;
+                padding: 10px 40px;
+                align-items: flex-end;
+                font-size: 20px;
+                
+            }
+        }
+
+        .card-inf {
+            width: 560px;
+            height: 272px;
+            background: $beige;
+            row-gap: 20px;
+            @include flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        input {
+            width: 520px;
+            height: 66px;
+            border-radius: 10px;
+        }
+
+        input::placeholder{
+            color: $gray;
+            font-family: Forum;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 50px; 
+            letter-spacing: 0.6px;
+        }
+    }
+
+    h6 {
+        @include heading2;
+        padding-top: 20px;
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 0.6px;
+        text-transform: none;
+    }
+
+    .get-card {
+        width: 456px;
+        height: 253px;
+        text-align: right;
+
+        p {
+            text-align: right;
+            font-size: 20px;
+            letter-spacing: 0.4px;
+        }
+
+        button {
+            display: inline-flex;
+            width: 75px;
+            height: 30px;
+            padding: 10px 0px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
 }
 
 footer {

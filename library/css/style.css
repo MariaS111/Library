@@ -152,9 +152,66 @@ p {
 
 #Favorites {
   height: 1439px;
+  padding: 0 20px;
 }
 #Favorites p {
   font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.6px;
+}
+#Favorites .radio-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+#Favorites label {
+  margin-right: 90px;
+}
+#Favorites input[type=radio]:checked + label {
+  font-weight: bold;
+}
+#Favorites .books {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 40px;
+}
+#Favorites h5 {
+  font-family: Inter;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 700;
+}
+#Favorites button {
+  width: 75px;
+  height: 30px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+#Favorites .info {
+  width: 355px;
+}
+#Favorites p {
+  font-size: 15px;
+  text-transform: capitalize;
+}
+#Favorites .book-info {
+  width: 550px;
+  height: 555px;
+  border: 1px solid #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
 }
 
 #CoffeShop {
@@ -164,8 +221,6 @@ p {
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  -moz-column-gap: 40px;
-       column-gap: 40px;
 }
 #CoffeShop p {
   font-size: 20px;
@@ -183,7 +238,7 @@ p {
   width: 1400px;
   height: 520px;
 }
-#CoffeShop h2 {
+#CoffeShop h3 {
   font-family: Forum;
   font-style: normal;
   font-weight: 400;
@@ -191,8 +246,9 @@ p {
   letter-spacing: 2px;
   text-transform: capitalize;
   color: #BB945F;
+  font-size: 40px;
 }
-#CoffeShop h2::after {
+#CoffeShop h3::after {
   content: none;
 }
 #CoffeShop .menu-type {
@@ -213,17 +269,164 @@ p {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  text-align: left;
 }
 #CoffeShop .price {
   font-family: Forum;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 #Contacts {
   height: 575px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+#Contacts .contacts {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1400px;
+  height: 414px;
+}
+#Contacts .contact-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#Contacts img {
+  width: 696px;
+  height: 414px;
+}
+
+button {
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  background-color: #FFFFFF;
+  color: #0C0C0E;
+  text-align: center;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
 }
 
 #LibraryCard {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   height: 614px;
+  padding: 0 20px;
+}
+#LibraryCard h2 {
+  padding-bottom: 41px;
+}
+#LibraryCard .cards-info {
+  display: flex;
+  -moz-column-gap: 344px;
+       column-gap: 344px;
+}
+#LibraryCard .find-card {
+  text-align: center;
+}
+#LibraryCard .find-card p {
+  font-size: 30px;
+  letter-spacing: 0.6px;
+}
+#LibraryCard .find-card form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 600px;
+  height: 387px;
+  padding-bottom: 0px;
+  justify-content: center;
+  border: 3px solid #BB945F;
+  background: #FFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#LibraryCard .find-card form button {
+  display: inline-flex;
+  padding: 10px 40px;
+  align-items: flex-end;
+  font-size: 20px;
+}
+#LibraryCard .find-card .card-inf {
+  width: 560px;
+  height: 272px;
+  background: #BB945F;
+  row-gap: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#LibraryCard .find-card input {
+  width: 520px;
+  height: 66px;
+  border-radius: 10px;
+}
+#LibraryCard .find-card input::-moz-placeholder {
+  color: #8E8E8E;
+  font-family: Forum;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+}
+#LibraryCard .find-card input::placeholder {
+  color: #8E8E8E;
+  font-family: Forum;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+}
+#LibraryCard h6 {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  padding-top: 20px;
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 0.6px;
+  text-transform: none;
+}
+#LibraryCard .get-card {
+  width: 456px;
+  height: 253px;
+  text-align: right;
+}
+#LibraryCard .get-card p {
+  text-align: right;
+  font-size: 20px;
+  letter-spacing: 0.4px;
+}
+#LibraryCard .get-card button {
+  display: inline-flex;
+  width: 75px;
+  height: 30px;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
