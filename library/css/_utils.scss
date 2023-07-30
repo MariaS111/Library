@@ -1,0 +1,35 @@
+$main-color: #FFFFFF;
+$black-color: #000000;
+$dark: #0C0C0E;
+$beige: #BB945F;
+$gray: #8E8E8E;
+
+
+@mixin heading{
+    font-family: Forum;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+@mixin text{
+    font-family: Inter;
+    color: $black-color;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-col  {
+    @include flex;
+    flex-direction: column;
+    justify-content: center;
+}

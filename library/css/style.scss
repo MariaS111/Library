@@ -1,0 +1,640 @@
+@import 'utils';
+
+body {
+    background-color: $black-color;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.wrapper {
+    width: 1440px; 
+    // height: 100vh; 
+    background-color: $main-color;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+a {
+    color: $main-color;
+    text-decoration: none;
+}
+
+header {
+    background-color: $dark;
+    color: $main-color;
+    @include flex;
+    height: 90px;
+    justify-content: space-between;
+    padding: 0 31px 0 20px;
+
+    ul {
+        gap: 30px;
+        padding-right: 40px;
+    }
+
+    .nav-menu {
+        @include flex;
+    }
+
+    a {
+        @include text;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 20px;
+        line-height: 50px;
+        letter-spacing: normal;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: $beige;
+        text-decoration: underline;
+        text-decoration-color: $beige;
+        letter-spacing: 0.5px;
+
+    }
+}
+
+h1 {
+    @include heading;
+    color: #FFF;
+    font-family: Forum;
+    font-size: 30px;
+    line-height: 50px; 
+    letter-spacing: 0.6px;
+}
+
+main {
+    background-color: $main-color;
+}
+
+#Welcome {
+    background: url('../images/Welcome.jpg'), lightgray 50% / cover no-repeat;
+    height: 600px;
+    position: relative;
+}
+
+.welcome {
+    background: $black-color;
+    position: absolute;
+    top: 220px;
+    left: 0px;
+    display: flex;
+    text-align: center;
+    width: 600px;
+    height: 220px;
+    margin: 35px 40px;
+    justify-content: center;
+    align-items: center;
+
+    h5 {
+        margin:0;
+        @include heading;
+        font-size: 40px;
+        color: $main-color;
+        text-align: center;
+        line-height: 50px; 
+        letter-spacing: 3px;
+        text-transform: uppercase;
+    }
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    @include heading;
+    color: $dark;
+    font-size: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $dark;
+}
+
+#About {
+    height: 837px;
+    @include flex-col;
+    
+    p{
+        padding-top: 40px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    img {
+        width: 450px;
+        height: 560px;
+    }
+
+    .images-container {
+        display: flex;
+        column-gap: 25px;
+    }
+
+    .btns {
+        @include flex;
+        padding-top: 40px;
+    }
+
+    .button {
+        position: relative; 
+        background-color: transparent;
+        border: none;
+        height: 26px;
+        width: 26px;
+        padding: 0; 
+        cursor: pointer; 
+    }
+
+    .button:active .button-circle {
+        background-color: $beige;
+      }  
+
+    .button-circle {
+        position: absolute; 
+        top: 5px; 
+        left: 5px;
+        height: 16px;
+        width: 16px;
+        background-color: $dark;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .active .button-circle {
+        background-color: $beige;
+      }
+
+
+}
+
+p {
+    @include text;
+}
+
+#Favorites {
+   @include flex-col;
+   height: 1439px;
+   padding: 15px auto 0 20px;
+   row-gap: 40px;
+    
+   .style {
+    padding-left: 20px;
+   }
+   
+    p {
+    align-self: flex-start;
+    margin: 0;
+    line-height: 40px;
+    letter-spacing: 0.6px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+   }
+
+    .radio-container {
+    display: flex;
+    align-self: flex-start;
+    padding-left: 20px;
+    gap: 20px;
+    align-items: center;
+  }
+
+    label {
+    margin-right: 90px;
+  }
+
+    input[type="radio"]:checked + label {
+    font-weight: bold;
+  }
+
+  .books {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 40px 250px;
+  }
+
+  h5 {
+    @include text;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  h6 {
+    @include heading;
+    color: $black-color;
+    font-size: 20px;
+    margin: 0;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  h6::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: $beige;
+  }
+
+  .info {
+    padding-top: 20px;
+    width: 355px;
+  }
+
+  .book-info {
+    width: 540px;
+    height: 555px;
+    padding-left: 20px;
+    padding-top: 15px;
+    border: 1px solid #000;
+    @include flex-col;
+    justify-content: flex-start;
+    align-items: start;
+    position: relative;
+
+    button {
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        width: 75px;
+        height: 30px;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+  }
+
+  img {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    bottom: -1px;
+    right: -40px;
+  }
+
+}
+
+#CoffeShop{
+    height: 841px;
+    padding-top: 40px;
+    @include flex-col;
+
+    p {
+        font-size: 20px;
+    }
+
+    .heading {
+       padding-top: 41px;
+       width: 1400px;
+       text-align: center;
+    }
+
+    .menu {
+        @include flex;
+        justify-content: space-between;
+        width: 1400px;
+        height: 520px;
+        padding: 40px;
+    }
+
+    h3{
+        @include heading;
+        color: $beige;
+        font-size: 40px;
+    }
+
+    h3::after {
+        content: none;
+    }
+     
+    .menu-type {
+        @include flex-col;
+        align-items: start;
+    }
+
+    .menu-items {
+        @include flex;
+        gap: 60px;
+    }
+
+    .menu-title {
+        @include flex-col;
+        align-items: start;
+    }
+
+    .second{
+        align-items: end;
+    }
+
+
+    .line {
+        width: 100px;
+        height: 0.5px;
+        background: $beige;
+    }
+
+    .lines {
+        @include flex-col;
+        padding-top: 5px;
+        gap: 80px;
+    }
+    
+    .menu-price {
+        @include flex-col;
+    }
+
+
+    .price {
+        font-family: Forum;
+    }
+}
+
+.bold {
+    font-weight: 700;
+}
+
+#Contacts {
+    height: 575px;
+    padding-top: 10px;
+    @include flex-col;
+
+    .contacts {
+        padding: 40px 0;
+        @include flex;
+        justify-content: space-between;
+        width: 1400px;
+        height: 414px;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    a {
+        @include text;
+        font-size: 20px;
+    }
+
+    p {
+        text-align: left;
+        font-size: 20px;
+    }
+
+    .no-margin {
+        margin: 10px 0;
+    }
+
+    p:nth-child(4),  
+    p:nth-child(1){
+        margin-bottom: 20px;
+      }  
+
+    p:nth-child(5) {
+        margin-bottom: 10px;
+    }
+
+    
+    img {
+    width: 696px;
+    height: 414px;
+    }
+}
+
+button {
+    border-radius: 2px;
+    border: 1px solid #0C0C0E;
+    background-color: $main-color;
+    color: $dark;
+    text-align: center;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1px;
+    transition: background-color 0.5s ease;
+}
+
+button:hover {
+    border: 1px solid $beige;
+    background-color: $beige;
+}
+
+
+#LibraryCard{
+    @include flex-col;
+    height: 614px;
+    padding: 0 20px;
+
+    .cards-info {
+       display: flex;
+       column-gap: 344px;
+    }
+
+    .find-card {
+        text-align: center;
+
+        p {
+            font-size: 30px;
+            letter-spacing: 0.6px;
+        }
+
+        form {
+            @include flex-col;
+            width: 600px;
+            height: 387px;
+            padding-bottom: 0px;
+            border: 3px solid $beige;
+            background: #FFF;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+            button{
+                margin-top: 15px;
+                display: inline-flex;
+                padding: 10px 40px;
+                align-items: flex-end;
+                font-size: 20px;
+                border-radius: 2px;
+                border: 1px solid $dark;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+        }
+
+        .card-inf {
+            width: 560px;
+            height: 272px;
+            background: $beige;
+            row-gap: 20px;
+            @include flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 520px;
+            height: 66px;
+            border-radius: 10px;
+            border: none;
+        }
+
+        input::placeholder{
+            color: $gray;
+            padding-left: 20px;
+            font-family: Forum;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 66px; 
+            letter-spacing: 0.6px;
+        }
+    }
+
+    h6 {
+        @include heading;
+        padding-top: 10px;
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 0.6px;
+        text-transform: none;
+    }
+
+    .get-card {
+        width: 456px;
+        height: 253px;
+        text-align: right;
+
+        p {
+            text-align: right;
+            font-size: 20px;
+            letter-spacing: 0.4px;
+            padding-bottom: 10px;
+        }
+
+        button {
+            display: inline-flex;
+            font-size: 10px;
+            font-weight: 700;
+            width: 75px;
+            height: 30px;
+            padding: 10px 0px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 2px;
+            border: 1px solid $dark;
+        }
+
+        button:nth-child(1) {
+            margin-right: 20px;
+        }
+    }
+
+}
+
+footer {
+    height: 250px;
+    background-color: $black-color;
+    color: $main-color;
+    @include flex-col;
+    padding: 0 20px;
+
+    a {
+        @include text;
+        color: $main-color;
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    p {
+        color: $main-color;
+        line-height: 20px; 
+    }
+
+    .line{
+        width: 1400px;
+        height: 1px;
+        background-color: $main-color;
+    }
+
+    .contacts-hours {
+        @include flex-col;
+        gap: 10px;
+        height: 140px;
+        margin-bottom: 30px;
+
+        a {
+            @include text;
+            color: $main-color;
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: normal;
+        }
+
+        p {
+            margin: 0;
+            text-align: right;
+            font-size: 15px;
+            letter-spacing: normal;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+
+        div:nth-child(1) {
+            gap: 1022px;
+        }
+
+        div:nth-child(2) {
+            gap: 1147px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .social {
+        margin: 0;
+        padding: 0;
+        gap: 15px;
+    }
+
+    .links {
+        @include flex;
+        justify-content: space-between;
+        gap: 485px;
+        
+        a,
+        p {
+        @include text;
+        color: $main-color;
+        font-size: 20px;
+        line-height: 40px;
+        margin: 0;
+        }
+    }
+
+    
+}
