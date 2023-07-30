@@ -81,19 +81,20 @@ main {
 }
 
 .welcome {
-    background-color: $black-color;
+    background: $black-color;
     position: absolute;
     top: 220px;
-    left: 0;
+    left: 0px;
     display: flex;
     text-align: center;
     width: 600px;
     height: 220px;
-    padding: 35px 40px;
+    margin: 35px 40px;
     justify-content: center;
     align-items: center;
 
     h5 {
+        margin:0;
         @include heading;
         font-size: 40px;
         color: $main-color;
@@ -186,17 +187,29 @@ p {
 }
 
 #Favorites {
+   @include flex-col;
    height: 1439px;
-   padding: 20px 20px 0 20px;
-
+   padding: 15px auto 0 20px;
+   row-gap: 40px;
+    
+   .style {
+    padding-left: 20px;
+   }
+   
     p {
-    font-size: 20px;
+    align-self: flex-start;
+    margin: 0;
     line-height: 40px;
     letter-spacing: 0.6px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
    }
 
     .radio-container {
     display: flex;
+    align-self: flex-start;
+    padding-left: 20px;
     gap: 20px;
     align-items: center;
   }
@@ -210,10 +223,9 @@ p {
   }
 
   .books {
-    @include flex;
-    padding-top: 40px;
-    flex-wrap: wrap;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 40px 250px;
   }
 
   h5 {
@@ -229,6 +241,7 @@ p {
     font-size: 20px;
     margin: 0;
     position: relative;
+    margin-bottom: 20px;
   }
 
   h6::after {
@@ -240,38 +253,41 @@ p {
     left: 0;
     background-color: $beige;
   }
-   
-  button {
-    width: 75px;
-    height: 30px;
-    text-align: center;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
 
   .info {
+    padding-top: 20px;
     width: 355px;
   }
 
-  p {
-    font-size: 15px;
-    text-transform: capitalize;
-  }
-
   .book-info {
-    width: 550px;
+    width: 540px;
     height: 555px;
     padding-left: 20px;
+    padding-top: 15px;
     border: 1px solid #000;
-    position: relative;
     @include flex-col;
+    justify-content: flex-start;
     align-items: start;
+    position: relative;
+
+    button {
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        width: 75px;
+        height: 30px;
+        text-align: center;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
   }
 
   img {
     position: absolute;
-    bottom: 0px;
+    width: 200px;
+    height: 300px;
+    bottom: -1px;
     right: -40px;
   }
 
@@ -279,6 +295,7 @@ p {
 
 #CoffeShop{
     height: 841px;
+    padding-top: 40px;
     @include flex-col;
 
     p {
@@ -357,6 +374,7 @@ p {
 
 #Contacts {
     height: 575px;
+    padding-top: 10px;
     @include flex-col;
 
     .contacts {
@@ -604,15 +622,17 @@ footer {
     }
 
     .links {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex;
+        justify-content: space-between;
+        gap: 485px;
         
-        li {
+        a,
+        p {
         @include text;
         color: $main-color;
         font-size: 20px;
         line-height: 40px;
+        margin: 0;
         }
     }
 
