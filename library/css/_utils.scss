@@ -5,7 +5,7 @@ $beige: #BB945F;
 $gray: #8E8E8E;
 
 
-@mixin heading2{
+@mixin heading{
     font-family: Forum;
     font-style: normal;
     font-weight: 400;
@@ -26,7 +26,6 @@ $gray: #8E8E8E;
 @mixin flex {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 @mixin flex-col  {

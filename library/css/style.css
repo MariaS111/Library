@@ -12,33 +12,76 @@ body {
   background-color: #FFFFFF;
 }
 
+ul {
+  display: flex;
+  list-style: none;
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 header {
   background-color: #0C0C0E;
   color: #FFFFFF;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 90px;
+  justify-content: space-between;
+  padding: 0 31px 0 20px;
 }
 header ul {
-  display: flex;
-  -moz-column-gap: 30px;
-       column-gap: 30px;
-  list-style: none;
+  gap: 30px;
+  padding-right: 40px;
 }
-header ul a {
-  color: #FFFFFF;
-  text-decoration: none;
+header .nav-menu {
+  display: flex;
+  align-items: center;
+}
+header a {
+  font-family: Inter;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 50px;
+  letter-spacing: normal;
+  transition: color 0.3s ease;
+}
+header a:hover {
+  color: #BB945F;
+  text-decoration: underline;
+  text-decoration-color: #BB945F;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  color: #FFF;
+  font-family: Forum;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+}
+
+main {
+  background-color: #FFFFFF;
 }
 
 #Welcome {
   background: url("../images/Welcome.jpg"), lightgray 50%/cover no-repeat;
   height: 600px;
   position: relative;
-}
-
-main {
-  background-color: #FFFFFF;
 }
 
 .welcome {
@@ -53,16 +96,17 @@ main {
   padding: 35px 40px;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
 }
-.welcome h2 {
-  flex-shrink: 0;
-  color: #FFFFFF;
-  text-align: center;
+.welcome h5 {
   font-family: Forum;
-  font-size: 40px;
   font-style: normal;
   font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-size: 40px;
+  color: #FFFFFF;
+  text-align: center;
   line-height: 50px;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -97,12 +141,11 @@ h2::after {
   height: 837px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 }
 #About p {
-  padding-top: 61px;
+  padding-top: 40px;
   font-size: 20px;
   text-align: center;
 }
@@ -118,7 +161,6 @@ h2::after {
 #About .btns {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   padding-top: 40px;
 }
 #About .button {
@@ -130,6 +172,9 @@ h2::after {
   padding: 0;
   cursor: pointer;
 }
+#About .button:active .button-circle {
+  background-color: #BB945F;
+}
 #About .button-circle {
   position: absolute;
   top: 5px;
@@ -139,6 +184,9 @@ h2::after {
   background-color: #0C0C0E;
   border-radius: 50%;
   z-index: 1;
+}
+#About .active .button-circle {
+  background-color: #BB945F;
 }
 
 p {
@@ -152,7 +200,7 @@ p {
 
 #Favorites {
   height: 1439px;
-  padding: 0 20px;
+  padding: 20px 20px 0 20px;
 }
 #Favorites p {
   font-size: 20px;
@@ -173,8 +221,9 @@ p {
 #Favorites .books {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   padding-top: 40px;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 #Favorites h5 {
   font-family: Inter;
@@ -185,6 +234,28 @@ p {
   letter-spacing: 2px;
   font-size: 15px;
   font-weight: 700;
+  margin: 0;
+}
+#Favorites h6 {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  color: #000000;
+  font-size: 20px;
+  margin: 0;
+  position: relative;
+}
+#Favorites h6::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #BB945F;
 }
 #Favorites button {
   width: 75px;
@@ -204,21 +275,25 @@ p {
 #Favorites .book-info {
   width: 550px;
   height: 555px;
+  padding-left: 20px;
   border: 1px solid #000;
   position: relative;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: start;
+}
+#Favorites img {
+  position: absolute;
+  bottom: 0px;
+  right: -40px;
 }
 
 #CoffeShop {
   height: 841px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 }
@@ -233,10 +308,10 @@ p {
 #CoffeShop .menu {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: space-between;
   width: 1400px;
   height: 520px;
+  padding: 40px;
 }
 #CoffeShop h3 {
   font-family: Forum;
@@ -254,22 +329,43 @@ p {
 #CoffeShop .menu-type {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
+  align-items: start;
 }
 #CoffeShop .menu-items {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
+  gap: 60px;
 }
-#CoffeShop .menu-item {
+#CoffeShop .menu-title {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+#CoffeShop .second {
+  align-items: end;
+}
+#CoffeShop .line {
+  width: 100px;
+  height: 0.5px;
+  background: #BB945F;
+}
+#CoffeShop .lines {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5px;
+  gap: 80px;
+}
+#CoffeShop .menu-price {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 #CoffeShop .price {
   font-family: Forum;
@@ -283,7 +379,6 @@ p {
   height: 575px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 }
@@ -291,17 +386,37 @@ p {
   padding: 40px 0;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: space-between;
   width: 1400px;
   height: 414px;
 }
 #Contacts .contact-info {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
+}
+#Contacts a {
+  font-family: Inter;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+#Contacts p {
+  text-align: left;
+  font-size: 20px;
+}
+#Contacts .no-margin {
+  margin: 10px 0;
+}
+#Contacts p:nth-child(4),
+#Contacts p:nth-child(1) {
+  margin-bottom: 20px;
+}
+#Contacts p:nth-child(5) {
+  margin-bottom: 10px;
 }
 #Contacts img {
   width: 696px;
@@ -319,19 +434,21 @@ button {
   font-weight: 700;
   line-height: normal;
   letter-spacing: 1px;
+  transition: background-color 0.5s ease;
+}
+
+button:hover {
+  border: 1px solid #BB945F;
+  background-color: #BB945F;
 }
 
 #LibraryCard {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   height: 614px;
   padding: 0 20px;
-}
-#LibraryCard h2 {
-  padding-bottom: 41px;
 }
 #LibraryCard .cards-info {
   display: flex;
@@ -348,20 +465,25 @@ button {
 #LibraryCard .find-card form {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   width: 600px;
   height: 387px;
   padding-bottom: 0px;
-  justify-content: center;
   border: 3px solid #BB945F;
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 #LibraryCard .find-card form button {
+  margin-top: 15px;
   display: inline-flex;
   padding: 10px 40px;
   align-items: flex-end;
   font-size: 20px;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 #LibraryCard .find-card .card-inf {
   width: 560px;
@@ -370,31 +492,34 @@ button {
   row-gap: 20px;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  margin-bottom: 5px;
 }
 #LibraryCard .find-card input {
   width: 520px;
   height: 66px;
   border-radius: 10px;
+  border: none;
 }
 #LibraryCard .find-card input::-moz-placeholder {
   color: #8E8E8E;
+  padding-left: 20px;
   font-family: Forum;
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
-  line-height: 50px;
+  line-height: 66px;
   letter-spacing: 0.6px;
 }
 #LibraryCard .find-card input::placeholder {
   color: #8E8E8E;
+  padding-left: 20px;
   font-family: Forum;
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
-  line-height: 50px;
+  line-height: 66px;
   letter-spacing: 0.6px;
 }
 #LibraryCard h6 {
@@ -404,7 +529,7 @@ button {
   line-height: 40px;
   letter-spacing: 2px;
   text-transform: capitalize;
-  padding-top: 20px;
+  padding-top: 10px;
   margin: 0;
   font-size: 30px;
   letter-spacing: 0.6px;
@@ -419,22 +544,112 @@ button {
   text-align: right;
   font-size: 20px;
   letter-spacing: 0.4px;
+  padding-bottom: 10px;
 }
 #LibraryCard .get-card button {
   display: inline-flex;
+  font-size: 10px;
+  font-weight: 700;
   width: 75px;
   height: 30px;
   padding: 10px 0px;
   justify-content: center;
   align-items: center;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+}
+#LibraryCard .get-card button:nth-child(1) {
+  margin-right: 20px;
 }
 
 footer {
   height: 250px;
   background-color: #000000;
   color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20px;
 }
 footer a {
+  font-family: Inter;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
   color: #FFFFFF;
-  text-decoration: none;
+  font-size: 20px;
+  line-height: 20px;
+}
+footer p {
+  color: #FFFFFF;
+  line-height: 20px;
+}
+footer .line {
+  width: 1400px;
+  height: 1px;
+  background-color: #FFFFFF;
+}
+footer .contacts-hours {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  height: 140px;
+  margin-bottom: 30px;
+}
+footer .contacts-hours a {
+  font-family: Inter;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: normal;
+}
+footer .contacts-hours p {
+  margin: 0;
+  text-align: right;
+  font-size: 15px;
+  letter-spacing: normal;
+}
+footer .contacts-hours div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+footer .contacts-hours div:nth-child(1) {
+  gap: 1022px;
+}
+footer .contacts-hours div:nth-child(2) {
+  gap: 1147px;
+  margin-bottom: 15px;
+}
+footer .social {
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+}
+footer .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .links li {
+  font-family: Inter;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  color: #FFFFFF;
+  font-size: 20px;
+  line-height: 40px;
 }/*# sourceMappingURL=style.css.map */
