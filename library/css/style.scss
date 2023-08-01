@@ -148,34 +148,32 @@ h2::after {
     .btns {
         @include flex;
         padding-top: 40px;
+        gap: 10px;
     }
-
-    .button {
-        position: relative; 
-        background-color: transparent;
-        border: none;
-        height: 26px;
-        width: 26px;
-        padding: 0; 
-        cursor: pointer; 
-    }
-
-    .button:active .button-circle {
-        background-color: $beige;
-      }  
 
     .button-circle {
-        position: absolute; 
+        position: relative;
+        cursor: pointer; 
+        border: none;
+        padding: 5px;
         top: 5px; 
         left: 5px;
         height: 16px;
         width: 16px;
         background-color: $dark;
         border-radius: 50%;
-        z-index: 1;
     }
 
-    .active .button-circle {
+    .button-circle::before {
+        content: "";
+        position: absolute;
+        top: -5px; 
+        left: -5px; 
+        right: -5px;
+        bottom: -5px;
+      }
+
+    .active{
         background-color: $beige;
       }
 

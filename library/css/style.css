@@ -163,30 +163,29 @@ h2::after {
   display: flex;
   align-items: center;
   padding-top: 40px;
-}
-#About .button {
-  position: relative;
-  background-color: transparent;
-  border: none;
-  height: 26px;
-  width: 26px;
-  padding: 0;
-  cursor: pointer;
-}
-#About .button:active .button-circle {
-  background-color: #BB945F;
+  gap: 10px;
 }
 #About .button-circle {
-  position: absolute;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
   top: 5px;
   left: 5px;
   height: 16px;
   width: 16px;
   background-color: #0C0C0E;
   border-radius: 50%;
-  z-index: 1;
 }
-#About .active .button-circle {
+#About .button-circle::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+}
+#About .active {
   background-color: #BB945F;
 }
 
