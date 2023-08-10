@@ -31,7 +31,7 @@ header {
     @include flex;
     height: 90px;
     justify-content: space-between;
-    padding: 0 31px 0 20px;
+    padding: 0 20px 0 20px;
 
     ul {
         gap: 30px;
@@ -40,6 +40,10 @@ header {
 
     .nav-menu {
         @include flex;
+    }
+
+    .burger-menu {
+        display: none;
     }
 
     a {
@@ -77,6 +81,7 @@ main {
 #Welcome {
     background: url('../images/Welcome.jpg'), lightgray 50% / cover no-repeat;
     height: 600px;
+    background-size: 100% 100%;
     position: relative;
 }
 
@@ -89,7 +94,6 @@ main {
     text-align: center;
     width: 600px;
     height: 220px;
-    margin: 35px 40px;
     justify-content: center;
     align-items: center;
 
@@ -125,14 +129,20 @@ h2::after {
     background-color: $dark;
 }
 
+section:not(:first-of-type) {
+    padding-top: 20px;
+  }
+
 #About {
     height: 837px;
     @include flex-col;
+    justify-content:flex-start ;
     
     p{
-        padding-top: 40px;
         font-size: 20px;
         text-align: center;
+        letter-spacing: normal;
+        margin: 61px 0 20px 0;
     }
 
     img {
@@ -145,9 +155,13 @@ h2::after {
         column-gap: 25px;
     }
 
+    .change-icon {
+        display: none;
+    }
+
     .btns {
         @include flex;
-        padding-top: 40px;
+        margin: 40px 0;
         gap: 10px;
     }
 
@@ -189,13 +203,15 @@ p {
    height: 1439px;
    padding: 15px auto 0 20px;
    row-gap: 40px;
-    
-   .style {
-    padding-left: 20px;
+
+   .favs-heading {
+    text-align: left;
+    letter-spacing: normal;
+    text-transform: none;
+    width: 100%;
    }
-   
+    
     p {
-    align-self: flex-start;
     margin: 0;
     line-height: 40px;
     letter-spacing: 0.6px;
@@ -213,12 +229,19 @@ p {
   }
 
     label {
-    margin-right: 90px;
+    margin-right: 50px;
+    @include text;
+    font-size: 20px;
+    letter-spacing: normal;
   }
 
     input[type="radio"]:checked + label {
     font-weight: bold;
   }
+    button:disabled {
+        border-color: $beige;
+        color: $beige;
+    }
 
   .books {
     display: grid;
@@ -570,46 +593,49 @@ footer {
     }
 
     .line{
-        width: 1400px;
+        margin-top: 20px;
+        width: 100%;
         height: 1px;
         background-color: $main-color;
     }
 
     .contacts-hours {
+        padding-top: 20px;
         @include flex-col;
+        width: 100%;
         gap: 10px;
-        height: 140px;
-        margin-bottom: 30px;
 
         a {
-            @include text;
-            color: $main-color;
+            text-align: left;
             font-size: 15px;
-            line-height: 20px;
             letter-spacing: normal;
         }
 
         p {
             margin: 0;
+            width: 149px;
             text-align: right;
             font-size: 15px;
             letter-spacing: normal;
         }
 
-        div {
-            display: flex;
-            justify-content: center;
+        .row {
+            display: flex;     
+            width: 100%; 
             align-items: center;
+            justify-content: space-between;
             padding: 0;
+
+            
         }
 
-        div:nth-child(1) {
-            gap: 1022px;
-        }
+        .location {
+                        text-align: left;
+                        width: 229px;
+                    }
 
-        div:nth-child(2) {
-            gap: 1147px;
-            margin-bottom: 15px;
+        .date {
+            @include flex-col;
         }
     }
 
@@ -620,16 +646,15 @@ footer {
     }
 
     .links {
-        @include flex;
+        width: 100%;
+        padding: 44px 0;
+        display: flex;
         justify-content: space-between;
-        gap: 485px;
         
         a,
         p {
-        @include text;
-        color: $main-color;
         font-size: 20px;
-        line-height: 40px;
+        line-height: 20px;
         margin: 0;
         }
     }

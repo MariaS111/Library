@@ -29,7 +29,7 @@ header {
   align-items: center;
   height: 90px;
   justify-content: space-between;
-  padding: 0 31px 0 20px;
+  padding: 0 20px 0 20px;
 }
 header ul {
   gap: 30px;
@@ -38,6 +38,9 @@ header ul {
 header .nav-menu {
   display: flex;
   align-items: center;
+}
+header .burger-menu {
+  display: none;
 }
 header a {
   font-family: Inter;
@@ -81,6 +84,7 @@ main {
 #Welcome {
   background: url("../images/Welcome.jpg"), lightgray 50%/cover no-repeat;
   height: 600px;
+  background-size: 100% 100%;
   position: relative;
 }
 
@@ -93,7 +97,6 @@ main {
   text-align: center;
   width: 600px;
   height: 220px;
-  margin: 35px 40px;
   justify-content: center;
   align-items: center;
 }
@@ -138,17 +141,23 @@ h2::after {
   background-color: #0C0C0E;
 }
 
+section:not(:first-of-type) {
+  padding-top: 20px;
+}
+
 #About {
   height: 837px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  justify-content: flex-start;
 }
 #About p {
-  padding-top: 40px;
   font-size: 20px;
   text-align: center;
+  letter-spacing: normal;
+  margin: 61px 0 20px 0;
 }
 #About img {
   width: 450px;
@@ -159,10 +168,13 @@ h2::after {
   -moz-column-gap: 25px;
        column-gap: 25px;
 }
+#About .change-icon {
+  display: none;
+}
 #About .btns {
   display: flex;
   align-items: center;
-  padding-top: 40px;
+  margin: 40px 0;
   gap: 10px;
 }
 #About .button-circle {
@@ -207,11 +219,13 @@ p {
   padding: 15px auto 0 20px;
   row-gap: 40px;
 }
-#Favorites .style {
-  padding-left: 20px;
+#Favorites .favs-heading {
+  text-align: left;
+  letter-spacing: normal;
+  text-transform: none;
+  width: 100%;
 }
 #Favorites p {
-  align-self: flex-start;
   margin: 0;
   line-height: 40px;
   letter-spacing: 0.6px;
@@ -227,10 +241,22 @@ p {
   align-items: center;
 }
 #Favorites label {
-  margin-right: 90px;
+  margin-right: 50px;
+  font-family: Inter;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  font-size: 20px;
+  letter-spacing: normal;
 }
 #Favorites input[type=radio]:checked + label {
   font-weight: bold;
+}
+#Favorites button:disabled {
+  border-color: #BB945F;
+  color: #BB945F;
 }
 #Favorites .books {
   display: grid;
@@ -607,49 +633,48 @@ footer p {
   line-height: 20px;
 }
 footer .line {
-  width: 1400px;
+  margin-top: 20px;
+  width: 100%;
   height: 1px;
   background-color: #FFFFFF;
 }
 footer .contacts-hours {
+  padding-top: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   gap: 10px;
-  height: 140px;
-  margin-bottom: 30px;
 }
 footer .contacts-hours a {
-  font-family: Inter;
-  color: #000000;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 2px;
-  color: #FFFFFF;
+  text-align: left;
   font-size: 15px;
-  line-height: 20px;
   letter-spacing: normal;
 }
 footer .contacts-hours p {
   margin: 0;
+  width: 149px;
   text-align: right;
   font-size: 15px;
   letter-spacing: normal;
 }
-footer .contacts-hours div {
+footer .contacts-hours .row {
   display: flex;
-  justify-content: center;
+  width: 100%;
   align-items: center;
+  justify-content: space-between;
   padding: 0;
 }
-footer .contacts-hours div:nth-child(1) {
-  gap: 1022px;
+footer .contacts-hours .location {
+  text-align: left;
+  width: 229px;
 }
-footer .contacts-hours div:nth-child(2) {
-  gap: 1147px;
-  margin-bottom: 15px;
+footer .contacts-hours .date {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 footer .social {
   margin: 0;
@@ -657,21 +682,14 @@ footer .social {
   gap: 15px;
 }
 footer .links {
+  width: 100%;
+  padding: 44px 0;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 485px;
 }
 footer .links a,
 footer .links p {
-  font-family: Inter;
-  color: #000000;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 40px;
-  letter-spacing: 2px;
-  color: #FFFFFF;
   font-size: 20px;
-  line-height: 40px;
+  line-height: 20px;
   margin: 0;
 }/*# sourceMappingURL=style.css.map */
