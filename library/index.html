@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&;900&display=swap" rel="stylesheet">
@@ -19,13 +20,18 @@
                 <ul>
                     <li><a href="#About">About</a></li>
                     <li><a href="#Favorites">Favorites</a></li>
-                    <li><a href="#CoffeShop">Cofee Shop</a></li>
+                    <li><a href="#CoffeShop">Coffee shop</a></li>
                     <li><a href="#Contacts">Contacts</a></li>
                     <li><a href="#LibraryCard">Library Card</a></li>
                 </ul>
                 </nav>
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
+                </svg>
+                <svg class="burger-menu" xmlns="http://www.w3.org/2000/svg" width="45" height="22" viewBox="0 0 45 22" fill="none">
+                    <line y1="1" x2="45" y2="1" stroke="white" stroke-width="2"/>
+                    <line y1="11" x2="45" y2="11" stroke="white" stroke-width="2"/>
+                    <line y1="21" x2="45" y2="21" stroke="white" stroke-width="2"/>
                 </svg>
             </div>
         </header>
@@ -39,79 +45,87 @@
                 <h2>About</h2>
                 <p>The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
                 <div class="images-container">
+                    <svg class="change-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="23" viewBox="0 0 14 23" fill="none">
+                        <path d="M0.93934 10.4393C0.353553 11.0251 0.353553 11.9749 0.93934 12.5607L10.4853 22.1066C11.0711 22.6924 12.0208 22.6924 12.6066 22.1066C13.1924 21.5208 13.1924 20.5711 12.6066 19.9853L4.12132 11.5L12.6066 3.01472C13.1924 2.42893 13.1924 1.47919 12.6066 0.893398C12.0208 0.307611 11.0711 0.307611 10.4853 0.893398L0.93934 10.4393ZM3 10H2L2 13H3V10Z" fill="black"/>
+                    </svg>
                     <img src="images/about1.png" alt="image1">
-                    <img src="images/about2.png" alt="image2">
-                    <img src="images/about3.png" alt="image3">
+                    <img class="img" src="images/about2.png" alt="image2">
+                    <img class="img" src="images/about3.png" alt="image3">
+                    <svg class='change-icon' xmlns="http://www.w3.org/2000/svg" width="14" height="23" viewBox="0 0 14 23" fill="none">
+                        <path d="M13.0607 12.5607C13.6464 11.9749 13.6464 11.0251 13.0607 10.4393L3.51472 0.893398C2.92893 0.307611 1.97919 0.307611 1.3934 0.893398C0.807611 1.47919 0.807611 2.42893 1.3934 3.01472L9.87868 11.5L1.3934 19.9853C0.807611 20.5711 0.807611 21.5208 1.3934 22.1066C1.97919 22.6924 2.92893 22.6924 3.51472 22.1066L13.0607 12.5607ZM11 13H12V10H11V13Z" fill="black"/>
+                    </svg> 
                 </div>
                 <div class="btns">
-                    <button class="button active">
-                        <div class="button-circle"></div>
-                    </button>
-                    <button class="button">
-                        <div class="button-circle"></div>
-                    </button>
-                    <button class="button" >
-                        <div class="button-circle"></div>
-                    </button>
+                    <button class="button-circle active"></button>
+                    <button class="button-circle"></button>
+                    <button class="button-circle"></button>
                 </div>
             </section>
             <section id="Favorites">
                 <h2>Favorites</h2>
-                <p class="bold style">Pick favorites of season</p>
+                <p class="bold favs-heading">Pick favorites of season</p>
                 <div class="radio-container">
-                    <input type="radio" id="winter" name="season" />
+                    <input type="radio" id="winter" name="season" checked>
                     <label for="winter">Winter</label>
                   
-                    <input type="radio" id="spring" name="season" />
+                    <input type="radio" id="spring" name="season">
                     <label for="spring">Spring</label>
                   
-                    <input type="radio" id="summer" name="season" />
+                    <input type="radio" id="summer" name="season">
                     <label for="summer">Summer</label>
                   
-                    <input type="radio" id="autumn" name="season" />
+                    <input type="radio" id="autumn" name="season">
                     <label for="autumn">Autumn</label>
                 </div>
-                <div class="books">
+                <div class="books" id="winter-books">
                     <div class="book-info">
-                        <h6>Staff Picks</h6>
-                        <h5 class="bold">The Book Eaters</h5>
-                        <h5 class="bold"> By Sunyi Dean</h5>
-                        <div class="info"><p>An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous
-                             mind-eater son from tradition and certain death. Complete with dysfunctional family values,
-                              light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
+                        <div class="book-info-content">
+                            <h6>Staff Picks</h6>
+                            <h5 class="bold head">The Book Eaters</h5>
+                            <h5 class="bold"> By Sunyi Dean</h5>
+                            <div class="info"><p>An unusual sci-fi story about a book eater woman who tries desperately to save her dangerous
+                                mind-eater son from tradition and certain death. Complete with dysfunctional family values,
+                                light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
+                            </div>
+                            <button>Buy</button>      
+                            <img src="images/book1.png" alt="book1">
                         </div>
-                        <button>Buy</button>      
-                        <img src="images/book1.png" alt="book1">
                     </div>
                     <div class="book-info">
-                        <h6>Staff Picks</h6>
-                        <h5 class="bold">Cackle</h5>
-                        <h5 class="bold"> By Rachel Harrison</h5>
-                        <div class="info"><p>Are your Halloween movies of choice The Witches of Eastwick and Practical Magic?
-                             Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
+                        <div class="book-info-content">
+                            <h6>Staff Picks</h6>
+                            <h5 class="bold head">Cackle</h5>
+                            <h5 class="bold"> By Rachel Harrison</h5>
+                            <div class="info"><p>Are your Halloween movies of choice The Witches of Eastwick and Practical Magic?
+                                Look no further than here - where a woman recovering from a breakup moves to a quaint town in upstate New York and befriends a beautiful witch.</p>
+                            </div>
+                            <button>Buy</button>      
+                            <img src="images/book2.png" alt="book2">
                         </div>
-                        <button>Buy</button>      
-                        <img src="images/book2.png" alt="book2">
+                    </div>    
+                    <div class="book-info">
+                        <div class="book-info-content">
+                            <h6>Staff Picks</h6>
+                            <h5 class="bold head">Dante: Poet of the Secular World</h5>
+                            <h5 class="bold"> By Erich Auerbach</h5>
+                            <div class="info"><p>Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing 
+                                for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
+                            </div>
+                            <button>Buy</button>      
+                            <img src="images/book3.png" alt="book3">
+                        </div>
                     </div>
                     <div class="book-info">
-                        <h6>Staff Picks</h6>
-                        <h5 class="bold">Dante: Poet of the Secular World</h5>
-                        <h5 class="bold"> By Erich Auerbach</h5>
-                        <div class="info"><p>Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing 
-                            for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
+                        <div class="book-info-content">
+                            <h6>Staff Picks</h6>
+                            <h5 class="bold head">The Last Queen</h5>
+                            <h5 class="bold"> By Clive Irving</h5>
+                            <div class="info"><p>A timely and revelatory new biography
+                                of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
+                            </div>
+                            <button disabled>Own</button>      
+                            <img src="images/book4.png" alt="book4">
                         </div>
-                        <button>Buy</button>      
-                        <img src="images/book3.png" alt="book3">
-                    </div>
-                    <div class="book-info">
-                        <h6>Staff Picks</h6>
-                        <h5 class="bold">The Last Queen</h5>
-                        <h5 class="bold"> By Clive Irving</h5>
-                        <div class="info"><p>A timely and revelatory new biography
-                             of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
-                        </div>
-                        <button>Buy</button>      
-                        <img src="images/book4.png" alt="book4">
                     </div>
                 </div>
             </section>
@@ -186,12 +200,16 @@
                 <h2>Our Contacts</h2>
                 <div class="contacts">
                     <div class="contact-info">
-                        <p class="bold margin">For all Library inquiries:</p>
-                        <p>Please call <a href="tel:(617) 730-2370">(617) 730-2370</a></p>
-                        <p class="no-margin">For TTY service, please call <a href="tel:(617) 730-2370">(617) 730-2370</a></p>
-                        <p class="no-margin">Putterham Library: <a href="tel:(617) 730-2370">(617) 730-2385</a></p>
-                        <p class="bold margin">Senior Staff</p>
-                        <p>Library Director: <a href="mailto: AmandaHirst@gmail.com"><b>Amanda Hirst</b></a></p>
+                        <div class="tels">
+                            <p class="bold title">For all Library inquiries:</p>
+                            <p>Please call <a href="tel:(617)730-2370">(617) 730-2370</a></p>
+                            <p>For TTY service, please call <a href="tel:(617) 730-2370">(617) 730-2370</a></p>
+                            <p>Putterham Library: <a href="tel:(617)730-2370">(617) 730-2385</a></p>
+                        </div>
+                        <div>
+                            <p class="bold title">Senior Staff</p>
+                            <p>Library Director: <a href="mailto:AmandaHirst@gmail.com"><b>Amanda Hirst</b></a></p>
+                        </div>
                     </div>
                     <img src="images/map.png" alt="map">
                 </div>
@@ -201,13 +219,13 @@
                 <div class="cards-info">
                     <div class="find-card">
                         <p>Find your Library card</p>
-                        <form action="">
+                        <form>
                             <div class='card-inf'>
                                 <h6>Brooklyn Public Library</h6>
                                 <input type="text" placeholder="Reader's name">
                                 <input type="text" placeholder="Card number">
                             </div>
-                            <button>Check the card</button>
+                            <button type="submit">Check the card</button>
                         </form>
                     </div>      
                     <div class="get-card">
@@ -223,11 +241,14 @@
         </main>
         <footer>
             <div class="contacts-hours">
-                <div>
-                    <a href="https://www.google.com/maps/place/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB/@53.8780842,27.888698,15z/data=!3m1!4b1!4m6!3m5!1s0x46da3377ddd9f16d:0x7226484800262de8!8m2!3d53.8758129!4d27.9020928!16s%2Fg%2F121x74x9?entry=ttu">286 Cadman Plaza, New York, NY 11238, United States</a>
-                        <p>Mon - Fri <br>08:00 am - 07:00 pm</p>
+                <div class="row">
+                    <p class="location"><a href="https://www.google.com/maps/place/%D0%A1%D0%BE%D0%BA%D0%BE%D0%BB/@53.8780842,27.888698,15z/data=!3m1!4b1!4m6!3m5!1s0x46da3377ddd9f16d:0x7226484800262de8!8m2!3d53.8758129!4d27.9020928!16s%2Fg%2F121x74x9?entry=ttu">286 Cadman Plaza, New York, NY 11238, United States</a></p>
+                    <div class="date">
+                        <p>Mon - Fri</p>
+                        <p>08:00 am - 07:00 pm</p>
+                    </div>
                 </div>
-                <div>
+                <div class="row">
                     <ul class="social">
                         <li><a href="https://twitter.com/?lang=ru"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M22.9912 3.95021C22.9913 3.77357 22.9447 3.60007 22.8559 3.44735C22.7671 3.29464 22.6395 3.16817 22.486 3.08084C22.3324 2.9935 22.1585 2.94842 21.9819 2.95017C21.8053 2.95193 21.6323 3.00046 21.4805 3.09083C20.8952 3.43921 20.265 3.70601 19.6075 3.88383C18.6685 3.07806 17.4708 2.63713 16.2335 2.64164C14.8761 2.6432 13.5724 3.17223 12.5977 4.11702C11.623 5.06181 11.0537 6.3484 11.0099 7.70512C8.33384 7.27838 5.90849 5.88164 4.19631 3.78126C4.09315 3.65609 3.9614 3.55757 3.81217 3.494C3.66295 3.43043 3.50062 3.40368 3.33889 3.41601C3.17725 3.42932 3.02128 3.4818 2.88448 3.56892C2.74768 3.65603 2.63416 3.77516 2.55373 3.91601C2.14126 4.63582 1.90436 5.44276 1.86228 6.27131C1.8202 7.09986 1.97412 7.92666 2.31154 8.68456L2.30959 8.68651C2.15794 8.77991 2.03278 8.91066 1.94609 9.06625C1.85941 9.22185 1.81409 9.39708 1.81447 9.57519C1.81263 9.72211 1.82145 9.86898 1.84084 10.0146C1.94298 11.2729 2.50062 12.4507 3.4092 13.3271C3.34756 13.4446 3.30994 13.5731 3.29854 13.7052C3.28714 13.8373 3.30218 13.9704 3.34279 14.0967C3.7389 15.3308 4.58129 16.3727 5.7051 17.0185C4.56334 17.46 3.33052 17.614 2.11525 17.4668C1.89032 17.4386 1.66248 17.4876 1.4691 17.6059C1.27572 17.7242 1.12828 17.9047 1.05097 18.1178C0.973654 18.3309 0.97106 18.5639 1.04361 18.7787C1.11616 18.9935 1.25955 19.1772 1.45025 19.2998C3.54034 20.646 5.97393 21.3617 8.46002 21.3613C11.2793 21.393 14.03 20.4921 16.2843 18.7988C18.5385 17.1054 20.17 14.7145 20.9248 11.998C21.2779 10.8146 21.4582 9.58648 21.46 8.35157C21.46 8.28614 21.46 8.21876 21.459 8.15138C21.9811 7.58831 22.3856 6.92668 22.6487 6.20527C22.9118 5.48387 23.0283 4.7172 22.9912 3.95021ZM19.6846 7.16212C19.5194 7.35746 19.4358 7.60891 19.4512 7.86427C19.461 8.02927 19.46 8.19527 19.46 8.35157C19.4579 9.39511 19.305 10.4329 19.0059 11.4326C18.3894 13.744 17.015 15.7817 15.103 17.2192C13.1909 18.6568 10.8517 19.4111 8.46002 19.3613C7.6009 19.3616 6.74474 19.2606 5.90924 19.0606C6.97465 18.7172 7.97083 18.1879 8.85162 17.4971C9.01385 17.3693 9.13257 17.1945 9.19151 16.9967C9.25044 16.7988 9.2467 16.5875 9.18079 16.3918C9.11489 16.1961 8.99005 16.0257 8.8234 15.9038C8.65675 15.7819 8.45647 15.7145 8.25002 15.7109C7.41885 15.698 6.62515 15.363 6.03615 14.7764C6.18557 14.7481 6.33401 14.7129 6.48147 14.6709C6.69748 14.6094 6.88651 14.477 7.01813 14.295C7.14975 14.1131 7.21629 13.8921 7.20704 13.6677C7.1978 13.4433 7.1133 13.2285 6.96715 13.058C6.82101 12.8874 6.62173 12.7711 6.40139 12.7275C5.91893 12.6323 5.46494 12.427 5.0747 12.1277C4.68447 11.8284 4.36852 11.4432 4.15139 11.002C4.33212 11.0266 4.514 11.0419 4.69631 11.0479C4.91289 11.0511 5.1249 10.9854 5.30169 10.8603C5.47847 10.7351 5.61086 10.5569 5.67971 10.3516C5.74569 10.1443 5.74229 9.92123 5.67004 9.7161C5.59778 9.51096 5.46061 9.33499 5.27932 9.21485C4.83947 8.92182 4.47916 8.52427 4.23068 8.0578C3.98219 7.59134 3.85328 7.07052 3.85549 6.54201C3.85549 6.47561 3.85744 6.4092 3.86135 6.34377C6.10261 8.43402 9.00967 9.66621 12.0703 9.82326C12.2248 9.82934 12.3787 9.80024 12.5203 9.73816C12.6619 9.67607 12.7875 9.58262 12.8877 9.46486C12.9869 9.34596 13.0571 9.20566 13.0929 9.05501C13.1286 8.90437 13.1289 8.74748 13.0937 8.5967C13.0366 8.35806 13.0074 8.11357 13.0068 7.86818C13.0077 7.01271 13.348 6.19254 13.9529 5.58764C14.5578 4.98274 15.378 4.64251 16.2334 4.64161C16.6736 4.64043 17.1092 4.7305 17.5127 4.90615C17.9163 5.0818 18.2791 5.3392 18.5781 5.66212C18.6935 5.7862 18.8386 5.87871 18.9998 5.93085C19.161 5.98299 19.3329 5.99303 19.499 5.96001C19.9098 5.88006 20.3147 5.7724 20.7109 5.63775C20.4407 6.19072 20.0953 6.70369 19.6846 7.16212Z" fill="#F5EFDB"/>
@@ -239,7 +260,10 @@
                             <path d="M15.12 5.32003H17V2.14003C16.0897 2.04538 15.1751 1.99865 14.26 2.00003C11.54 2.00003 9.67999 3.66003 9.67999 6.70003V9.32003H6.60999V12.88H9.67999V22H13.36V12.88H16.42L16.88 9.32003H13.36V7.05003C13.36 6.00003 13.64 5.32003 15.12 5.32003Z" fill="#F5EFDB"/>
                         </svg></a></li>
                     </ul>  
-                        <p>Sat - Sun <br>10:00 am - 06:00 pm</p>
+                    <div class="date">
+                        <p>Sat - Sun <p>
+                        <p>10:00 am - 06:00 pm</p>
+                    </div>
                 </div>
                 <div class="line"></div>
             </div>

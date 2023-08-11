@@ -1,0 +1,66 @@
+@media (max-width: 768px) {
+  .wrapper {
+    width: 768px;
+  }
+  header nav {
+    display: none;
+  }
+  header .burger-menu {
+    display: block;
+  }
+  header .nav-menu {
+    gap: 40px;
+  }
+  #About {
+    height: 862px;
+    gap: 20px;
+  }
+  #About p {
+    width: 728px;
+    padding: 0;
+    margin: 0;
+    margin-top: 40px;
+  }
+  #About .images-container {
+    -moz-column-gap: 58px;
+         column-gap: 58px;
+  }
+  #About .images-container img:nth-child(3),
+  #About .images-container img:nth-child(4) {
+    display: none;
+  }
+  #About .change-icon {
+    display: block;
+    align-self: center;
+  }
+  #About .btns {
+    margin-top: 0;
+  }
+  #Favorites {
+    height: 2629px;
+  }
+  #Favorites .books {
+    align-self: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 40px;
+  }
+  #CoffeShop {
+    height: 1481px;
+  }
+  #CoffeShop .menu {
+    flex-direction: column;
+  }
+  #Contacts {
+    height: 995px;
+  }
+  #Contacts .contacts {
+    flex-direction: column;
+  }
+  #LibraryCard {
+    height: 857px;
+  }
+  #LibraryCard .cards-info {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=media.css.map */
