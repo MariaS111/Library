@@ -40,6 +40,7 @@
     height: 2629px;
   }
   #Favorites .books {
+    align-self: center;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
     row-gap: 40px;
