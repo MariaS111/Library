@@ -1,25 +1,29 @@
+@import 'utils';
+
 @media (max-width: 1024px){
 
 
 }
 
-@media (max-width: 768px){
-    .wrapper{
-        width: 768px;
-    }
-
+@media screen and (max-width: 768px){
+    
     header {
-       nav{
+        
+       .nav{
         display: none;
        }
 
-       .burger-menu {
+       .burger-icon {
             display: block;
+            background-color: $black-color;
+            border: none;
+            cursor: pointer;
         } 
 
         .nav-menu {
             gap: 40px;
         }
+
     }
     
     #About{
@@ -34,7 +38,7 @@
         }
         
         .images-container {
-            column-gap: 58px;
+            column-gap: 65px;
         }
 
         .images-container img:nth-child(3),
@@ -45,23 +49,36 @@
     
         .change-icon {
             display: block;
-            align-self: center;
+            padding-top: 295px;
+            width: 8px;
+            height: 11px;
         }
 
         .btns {
             margin-top: 0;
+        }
+
+        .btns button:nth-child(4),
+        .btns button:nth-child(5) {
+            display: block;
         }
     
     }
 
     #Favorites {
         height: 2629px;
+        row-gap: 33px;
+
+        .favs-heading {
+            margin-top: 25px;
+           }
 
         .books {
             align-self: center;
+            padding-right: 43px;
             grid-template-columns: 1fr;
             grid-template-rows: repeat(4, 1fr); 
-            row-gap: 40px; 
+            row-gap: 38px; 
           }
 
 
@@ -73,23 +90,55 @@
 
         .menu{
             flex-direction: column;
+            row-gap: 40px;
+        }
+
+        .heading {
+            width: 728px;
+        }
+
+        .menu-type {
+            width: 100%;
+            align-self: flex-start;
         }
 
     }
 
     #Contacts{
-        height: 995px;
+        height: 1055px;
 
         .contacts{
-            flex-direction: column;
+            flex-direction: column; 
+            row-gap: 100px;
+        }
+
+        .contact-info {
+            width: 100%;
+            text-align: left;
+            gap: 20px;
         }
     }
 
     #LibraryCard{
-        height: 857px;
+        height: 837px;
     
         .cards-info {
            flex-direction: column;
+           align-items: center;
+           justify-content: center;
+        }
+
+        .get-card {
+            @include flex-col;
+            justify-content: flex-start;
+            margin-top: 20px;
+            text-align: center;
+
+            p {
+                margin-top: 30px;
+                text-align: center;
+                width: 600px;
+            }
         }
 
     }    

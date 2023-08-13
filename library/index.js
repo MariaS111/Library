@@ -29,3 +29,50 @@ document.addEventListener('click', function (event) {
       }
     }
   });
+
+
+const burgerIcon = document.getElementById('burger-icon');
+const menu = document.getElementById('burger-menu');
+const navMenu = document.getElementById('nav-menu');
+
+
+function menuAppear() {
+  menu.style.visibility = "visible";
+  menu.style.opacity = "1";
+  navMenu.style.visibility = "hidden";
+  navMenu.style.opacity = "0";
+}
+
+function menuRemove() {
+  menu.style.visibility = "hidden";
+  menu.style.opacity = "0";
+  navMenu.style.visibility = "visible";
+  navMenu.style.opacity = "1";
+}
+
+burgerIcon.addEventListener('click', () => {
+  menuAppear();
+  // menu.style.display = "flex";
+  // navMenu.style.display = "none";
+});
+
+const closeBurgMenu = document.getElementById('close-burger-menu');
+
+closeBurgMenu.addEventListener('click', () => {
+  menuRemove();
+  // menu.style.display = "none";
+  // navMenu.style.display = "flex";
+}
+);
+
+document.addEventListener('click', (event) => {
+  if (!menu.contains(event.target) && !burgerIcon.contains(event.target)) {
+    menuRemove();
+  }
+});
+
+menu.addEventListener('click', (event) => {
+  if (event.target.tagName === 'A') {
+    menuRemove();
+  }
+});
