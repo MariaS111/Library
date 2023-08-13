@@ -1,4 +1,32 @@
-@media screen and (max-width: 768px) {
+@media (max-width: 1440px) {
+  #Favorites {
+    height: 2629px;
+    row-gap: 33px;
+  }
+  #Favorites .favs-heading {
+    margin-top: 25px;
+  }
+  #Favorites .books {
+    align-self: center;
+    padding-right: 43px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 38px;
+  }
+  #About .images-container img:nth-child(4) {
+    display: none;
+  }
+  #About .change-icon {
+    display: block;
+    padding-top: 295px;
+    width: 8px;
+    height: 11px;
+  }
+  #About .btns button:nth-child(4) {
+    display: block;
+  }
+}
+@media (max-width: 1044px) {
   header .nav {
     display: none;
   }
@@ -29,32 +57,12 @@
   #About .images-container img:nth-child(4) {
     display: none;
   }
-  #About .change-icon {
-    display: block;
-    padding-top: 295px;
-    width: 8px;
-    height: 11px;
-  }
   #About .btns {
     margin-top: 0;
   }
   #About .btns button:nth-child(4),
   #About .btns button:nth-child(5) {
     display: block;
-  }
-  #Favorites {
-    height: 2629px;
-    row-gap: 33px;
-  }
-  #Favorites .favs-heading {
-    margin-top: 25px;
-  }
-  #Favorites .books {
-    align-self: center;
-    padding-right: 43px;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    row-gap: 38px;
   }
   #CoffeShop {
     height: 1481px;
@@ -103,5 +111,55 @@
     margin-top: 30px;
     text-align: center;
     width: 600px;
+  }
+}
+@media (max-width: 750px) {
+  #Favorites label {
+    padding-right: 67px;
+  }
+  #CoffeShop .heading {
+    width: 90%;
+  }
+  #Contacts img {
+    width: 600px;
+  }
+}
+@media (max-width: 717px) {
+  #Contacts {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 660px) {
+  #About p {
+    width: 600px;
+    margin: 20px 0;
+  }
+  #About .images-container {
+    -moz-column-gap: 50px;
+         column-gap: 50px;
+  }
+  #LibraryCard .cards-info {
+    width: 95%;
+  }
+  #LibraryCard .card-inf h6 {
+    width: 90%;
+  }
+  #LibraryCard form {
+    width: 550px;
+  }
+  #Contacts img {
+    width: 550px;
+  }
+  footer .line {
+    width: 90%;
+  }
+  footer .contacts-hours {
+    width: 90%;
+  }
+  footer .links {
+    width: 90%;
+  }
+  .welcome {
+    width: 550px;
   }
 }/*# sourceMappingURL=media.css.map */

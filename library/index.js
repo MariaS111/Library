@@ -37,17 +37,20 @@ const navMenu = document.getElementById('nav-menu');
 
 
 function menuAppear() {
+  console.log(window.innerWidth)
+  // menu.style.display = "flex";
   menu.style.visibility = "visible";
   menu.style.opacity = "1";
-  navMenu.style.visibility = "hidden";
-  navMenu.style.opacity = "0";
+  // navMenu.style.visibility = "hidden";
+  // navMenu.style.opacity = "0";
 }
 
 function menuRemove() {
+  // menu.style.display = "none";
   menu.style.visibility = "hidden";
   menu.style.opacity = "0";
-  navMenu.style.visibility = "visible";
-  navMenu.style.opacity = "1";
+  // navMenu.style.visibility = "visible";
+  // navMenu.style.opacity = "1";
 }
 
 burgerIcon.addEventListener('click', () => {

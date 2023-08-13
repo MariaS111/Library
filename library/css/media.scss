@@ -1,32 +1,66 @@
 @import 'utils';
 
-@media (max-width: 1024px){
+@media (max-width: 1440px){
 
+    #Favorites {
+        height: 2629px;
+        row-gap: 33px;
 
-}
+        .favs-heading {
+            margin-top: 25px;
+           }
 
-@media screen and (max-width: 768px){
-    
-    header {
-        
-       .nav{
-        display: none;
-       }
+        .books {
+            align-self: center;
+            padding-right: 43px;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr); 
+            row-gap: 38px; 
+          }
+    }
 
-       .burger-icon {
+    #About{
+
+        .images-container img:nth-child(4) {
+            display: none; 
+        }
+
+        .change-icon {
             display: block;
-            background-color: $black-color;
-            border: none;
-            cursor: pointer;
-        } 
+            padding-top: 295px;
+            width: 8px;
+            height: 11px;
+        }
 
-        .nav-menu {
-            gap: 40px;
+        .btns button:nth-child(4){
+            display: block;
         }
 
     }
-    
-    #About{
+
+}
+
+@media (max-width: 1044px){
+
+    header {
+        .nav{
+         display: none;
+        }
+ 
+        .burger-icon {
+             display: block;
+             background-color: $black-color;
+             border: none;
+             cursor: pointer;
+         } 
+ 
+         .nav-menu {
+             gap: 40px;
+         }
+ 
+     }
+
+     #About{
         height: 862px;
         gap:20px;
 
@@ -46,14 +80,6 @@
             display: none; 
         }
 
-    
-        .change-icon {
-            display: block;
-            padding-top: 295px;
-            width: 8px;
-            height: 11px;
-        }
-
         .btns {
             margin-top: 0;
         }
@@ -63,27 +89,7 @@
             display: block;
         }
     
-    }
-
-    #Favorites {
-        height: 2629px;
-        row-gap: 33px;
-
-        .favs-heading {
-            margin-top: 25px;
-           }
-
-        .books {
-            align-self: center;
-            padding-right: 43px;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(4, 1fr); 
-            row-gap: 38px; 
-          }
-
-
-
-    }
+    }  
 
     #CoffeShop{
         height: 1481px;
@@ -104,7 +110,7 @@
 
     }
 
-    #Contacts{
+     #Contacts{
         height: 1055px;
 
         .contacts{
@@ -142,5 +148,90 @@
         }
 
     }    
-
 }
+
+
+@media (max-width: 750px){
+ #Favorites {
+   
+    label {
+            padding-right: 67px;
+    }
+ }
+
+ #CoffeShop{
+
+    .heading {
+       width: 90%;
+    }
+}
+
+#Contacts {
+    img {
+        width: 600px;
+    }
+}
+}
+
+@media (max-width: 717px){
+    #Contacts {
+        margin-top: 20px;
+    }
+   }
+
+@media (max-width: 660px){
+    
+    #About {
+        p {
+            width: 600px;
+            margin: 20px 0;
+        }
+  
+        .images-container {
+            column-gap: 50px;
+        }
+    }
+
+    #LibraryCard{
+    
+        .cards-info {
+           width: 95%;
+        }
+
+        .card-inf {
+
+            h6 {
+                width: 90%;
+            }
+        }
+
+        form {
+            width: 550px;
+        }
+
+    }    
+
+    #Contacts {
+        img {
+            width: 550px;
+        }
+    }
+
+    footer {
+        .line{
+            width: 90%;
+        }
+    
+        .contacts-hours {
+           width: 90%;
+        }
+
+        .links {
+            width: 90%;
+        }
+    }
+
+    .welcome {
+        width: 550px;
+    }
+}   
