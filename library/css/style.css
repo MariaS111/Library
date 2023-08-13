@@ -1,15 +1,8 @@
 body {
   background-color: #000000;
+  min-width: 640px;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.wrapper {
-  width: 1440px;
-  background-color: #FFFFFF;
 }
 
 ul {
@@ -29,7 +22,8 @@ header {
   align-items: center;
   height: 90px;
   justify-content: space-between;
-  padding: 0 20px 0 20px;
+  padding: 0 20px;
+  position: relative;
 }
 header ul {
   gap: 30px;
@@ -38,9 +32,49 @@ header ul {
 header .nav-menu {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+header .burger-icon {
+  display: none;
 }
 header .burger-menu {
-  display: none;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s linear, visibility 0.3s linear;
+  width: 332px;
+  height: 570px;
+  background-color: #0C0C0E;
+  position: absolute;
+  top: 6px;
+  right: 0;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 100;
+  gap: 30px;
+  padding-top: 20px;
+}
+header .burger-menu button {
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+}
+header .burger-menu div {
+  display: flex;
+  margin-right: 20px;
+  align-self: flex-end;
+  gap: 53px;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .burger-menu ul {
+  flex-direction: column;
+  gap: 30px;
+}
+header .burger-menu li {
+  text-align: center;
 }
 header a {
   font-family: Inter;
@@ -149,6 +183,7 @@ h2::after {
   justify-content: center;
   justify-content: flex-start;
   margin-top: 20px;
+  overflow-x: hidden;
 }
 #About p {
   font-size: 20px;
@@ -173,6 +208,11 @@ h2::after {
   align-items: center;
   margin: 40px 0 5px 0;
   gap: 10px;
+}
+#About .btns button:nth-child(4),
+#About .btns button:nth-child(5) {
+  display: none;
+  position: absolute;
 }
 #About .button-circle {
   position: relative;
@@ -241,6 +281,9 @@ p {
   margin-left: 20px;
   align-items: center;
 }
+#Favorites .radio-container label:last-child {
+  padding-right: 0;
+}
 #Favorites label {
   padding-right: 107px;
   line-height: normal;
@@ -278,9 +321,6 @@ p {
 }
 #Favorites button:disabled {
   border-color: #BB945F;
-  color: #BB945F;
-}
-#Favorites button:hover {
   color: #BB945F;
   background-color: #FFFFFF;
 }
@@ -382,7 +422,7 @@ p {
 }
 #CoffeShop .heading {
   padding-top: 21px;
-  width: 1400px;
+  width: 97%;
   text-align: center;
 }
 #CoffeShop .menu {
@@ -467,13 +507,14 @@ p {
   flex-direction: column;
   justify-content: center;
   justify-content: flex-start;
+  margin: 0 20px;
 }
 #Contacts .contacts {
   padding-top: 61px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1400px;
+  width: 100%;
   height: 414px;
 }
 #Contacts .contact-info {
@@ -674,7 +715,7 @@ footer {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 0 20px;
+  margin: 0 20px;
 }
 footer a {
   font-family: Inter;

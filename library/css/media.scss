@@ -1,28 +1,66 @@
-@media (max-width: 1024px){
+@import 'utils';
 
+@media (max-width: 1440px){
+
+    #Favorites {
+        height: 2629px;
+        row-gap: 33px;
+
+        .favs-heading {
+            margin-top: 25px;
+           }
+
+        .books {
+            align-self: center;
+            padding-right: 43px;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr); 
+            row-gap: 38px; 
+          }
+    }
+
+    #About{
+
+        .images-container img:nth-child(4) {
+            display: none; 
+        }
+
+        .change-icon {
+            display: block;
+            padding-top: 295px;
+            width: 8px;
+            height: 11px;
+        }
+
+        .btns button:nth-child(4){
+            display: block;
+        }
+
+    }
 
 }
 
-@media (max-width: 768px){
-    .wrapper{
-        width: 768px;
-    }
+@media (max-width: 1044px){
 
     header {
-       nav{
-        display: none;
-       }
-
-       .burger-menu {
-            display: block;
-        } 
-
-        .nav-menu {
-            gap: 40px;
+        .nav{
+         display: none;
         }
-    }
-    
-    #About{
+ 
+        .burger-icon {
+             display: block;
+             background-color: $black-color;
+             border: none;
+             cursor: pointer;
+         } 
+ 
+         .nav-menu {
+             gap: 40px;
+         }
+ 
+     }
+
+     #About{
         height: 862px;
         gap:20px;
 
@@ -34,7 +72,7 @@
         }
         
         .images-container {
-            column-gap: 58px;
+            column-gap: 65px;
         }
 
         .images-container img:nth-child(3),
@@ -42,56 +80,158 @@
             display: none; 
         }
 
-    
-        .change-icon {
-            display: block;
-            align-self: center;
-        }
-
         .btns {
             margin-top: 0;
         }
+
+        .btns button:nth-child(4),
+        .btns button:nth-child(5) {
+            display: block;
+        }
     
-    }
-
-    #Favorites {
-        height: 2629px;
-
-        .books {
-            align-self: center;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(4, 1fr); 
-            row-gap: 40px; 
-          }
-
-
-
-    }
+    }  
 
     #CoffeShop{
         height: 1481px;
 
         .menu{
             flex-direction: column;
+            row-gap: 40px;
+        }
+
+        .heading {
+            width: 728px;
+        }
+
+        .menu-type {
+            width: 100%;
+            align-self: flex-start;
         }
 
     }
 
-    #Contacts{
-        height: 995px;
+     #Contacts{
+        height: 1055px;
 
         .contacts{
-            flex-direction: column;
+            flex-direction: column; 
+            row-gap: 100px;
+        }
+
+        .contact-info {
+            width: 100%;
+            text-align: left;
+            gap: 20px;
         }
     }
 
     #LibraryCard{
-        height: 857px;
+        height: 837px;
     
         .cards-info {
            flex-direction: column;
+           align-items: center;
+           justify-content: center;
+        }
+
+        .get-card {
+            @include flex-col;
+            justify-content: flex-start;
+            margin-top: 20px;
+            text-align: center;
+
+            p {
+                margin-top: 30px;
+                text-align: center;
+                width: 600px;
+            }
+        }
+
+    }    
+}
+
+
+@media (max-width: 750px){
+ #Favorites {
+   
+    label {
+            padding-right: 67px;
+    }
+ }
+
+ #CoffeShop{
+
+    .heading {
+       width: 90%;
+    }
+}
+
+#Contacts {
+    img {
+        width: 600px;
+    }
+}
+}
+
+@media (max-width: 717px){
+    #Contacts {
+        margin-top: 20px;
+    }
+   }
+
+@media (max-width: 660px){
+    
+    #About {
+        p {
+            width: 600px;
+            margin: 20px 0;
+        }
+  
+        .images-container {
+            column-gap: 50px;
+        }
+    }
+
+    #LibraryCard{
+    
+        .cards-info {
+           width: 95%;
+        }
+
+        .card-inf {
+
+            h6 {
+                width: 90%;
+            }
+        }
+
+        form {
+            width: 550px;
         }
 
     }    
 
-}
+    #Contacts {
+        img {
+            width: 550px;
+        }
+    }
+
+    footer {
+        .line{
+            width: 90%;
+        }
+    
+        .contacts-hours {
+           width: 90%;
+        }
+
+        .links {
+            width: 90%;
+        }
+    }
+
+    .welcome {
+        width: 550px;
+    }
+}   
