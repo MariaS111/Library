@@ -1,7 +1,7 @@
 @import 'utils';
 
 body {
-    background-color: $main-color;
+    background-color: $black-color;
     min-width: 640px;
     padding: 0;
     margin: 0;
@@ -33,9 +33,10 @@ header {
 
     .nav-menu {
         @include flex;
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 0.7s linear, visibility 0.7s linear;
+        // visibility: visible;
+        justify-content: center;
+        // opacity: 1;
+        // transition: opacity 0.5s linear, visibility 0.5s linear;
     }
 
     .burger-icon {
@@ -46,25 +47,20 @@ header {
         display: flex;
         visibility: hidden;
         opacity: 0;
-        transition: opacity 0.7s linear, visibility 0.7s linear;
+        transition: opacity 0.3s linear, visibility 0.3s linear;
         width: 332px;
         height: 570px;
-        background-color: $black-color;
+        background-color: $dark;
         position: absolute;
-        top: 0;
+        top: 6px;
         right: 0;
         box-sizing: border-box;
         align-items: center;
         flex-direction: column;
         justify-content: flex-start;
         z-index: 100;
-        gap: 52px;
+        gap: 30px;
         padding-top: 20px;
-
-        // .burger-menu.show {
-        //     opacity: 1;
-        //     visibility: visible;
-        // }
 
        
         button {
@@ -86,7 +82,7 @@ header {
         
         ul {
             flex-direction: column;
-            gap: 20px;
+            gap: 30px;
         }
 
         li {
@@ -283,6 +279,10 @@ p {
     align-self: flex-start;
     margin-left: 20px;
     align-items: center;
+  }
+
+  .radio-container label:last-child {
+    padding-right: 0;
   }
 
     label {
@@ -498,7 +498,7 @@ p {
     height: 575px;
     @include flex-col;
     justify-content: flex-start;
-    padding: 0 20px;
+    margin: 0 20px;
 
     .contacts {
         padding-top: 61px;
@@ -704,7 +704,7 @@ footer {
     background-color: $black-color;
     color: $main-color;
     @include flex-col;
-    padding: 0 20px;
+    margin: 0 20px;
 
     a {
         @include text;
