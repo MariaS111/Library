@@ -125,8 +125,10 @@ main {
 #Welcome {
     background: url('../images/Welcome.jpg'), lightgray 50% / cover no-repeat;
     height: 600px;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
     position: relative;
+    scroll-behavior: smooth;
 }
 
 .welcome {
@@ -211,7 +213,6 @@ h2::after {
     .btns button:nth-child(4),
     .btns button:nth-child(5) {
         display: none;
-        position: absolute;
     }
 
     .button-circle {

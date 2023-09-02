@@ -60,7 +60,6 @@
   #About .btns {
     margin-top: 0;
   }
-  #About .btns button:nth-child(4),
   #About .btns button:nth-child(5) {
     display: block;
   }
