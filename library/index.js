@@ -125,3 +125,18 @@ close2.addEventListener('click', () => {
   modal_register.style.visibility = "hidden";
   modal_register.style.opacity = "0";
 });
+
+
+const modalBuyCard = document.querySelector('.modal-buy-card');
+const closeBuyCard = document.getElementById('close-buy-card');
+const buyButton = document.getElementById('buy-button');
+
+buyButton.addEventListener('click', () => {
+  modalBuyCard.style.visibility = "visible";
+  modalBuyCard.style.opacity = "1";
+});
+
+closeBuyCard.addEventListener('click', () => {
+  modalBuyCard.style.visibility = "hidden";
+  modalBuyCard.style.opacity = "0";
+});
