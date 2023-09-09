@@ -177,6 +177,29 @@ main {
   cursor: pointer;
 }
 
+#profile-icon-authorized {
+  display: none;
+  position: relative;
+}
+
+.initials-profile-icon {
+  margin: 0;
+  display: none;
+  font-family: Inter;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 2px;
+  color: #BB945F;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: normal;
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+
 #Welcome {
   background: url("../images/Welcome.jpg"), lightgray 50%/cover no-repeat;
   height: 600px;

@@ -1,3 +1,4 @@
+
 document.addEventListener('click', function (event) {
     if (event.target.tagName === 'A') {
       const target = document.querySelector(event.target.getAttribute('href'));
@@ -101,6 +102,7 @@ document.addEventListener('click', (event) => {
 const modal_login = document.querySelector('.modal_login');
 const close1 = document.getElementById('close-btn-1');
 const close2 = document.getElementById('close-btn-2');
+
 const modal_register = document.querySelector('.modal_register');
 const loginButton = document.getElementById('login-button');
 const registerButton = document.getElementById('register-button');
@@ -140,3 +142,77 @@ closeBuyCard.addEventListener('click', () => {
   modalBuyCard.style.visibility = "hidden";
   modalBuyCard.style.opacity = "0";
 });
+
+
+
+const registerSubmitButton = document.getElementById('registerSubmitButton');
+const loginSubmitButton = document.getElementById('loginSubmitButton');
+const firstnameInput = document.getElementById('first-name-register');
+const lastnameInput = document.getElementById('last-name-register');
+const emailInput = document.getElementById('email-register');
+const passwordInput = document.getElementById('password-register');
+const profile = document.getElementById('profile');
+const profileAuth = document.getElementById('profile-icon-authorized');
+const paragraph = document.querySelector('.initials-profile-icon');
+
+
+registerSubmitButton.onclick = function() {
+  const name = firstnameInput.value;
+  const lastName = lastnameInput.value;
+  const password = passwordInput.value;
+  const email = emailInput.value;
+  var randomNumber = Math.floor(Math.random() * 0x1000000000); 
+  var cardNumber = randomNumber.toString(16).toUpperCase();
+  console.log(cardNumber)
+  
+  localStorage.setItem('firstName', name);
+  localStorage.setItem('password', password);
+  localStorage.setItem('lastName', lastName);
+  localStorage.setItem('email', email);
+  localStorage.setItem('card-number', cardNumber);
+  var initials = localStorage['name'][0] + localStorage['lastName'][0]
+  auth(initials)
+  modal_register.style.visibility = "hidden";
+  modal_register.style.opacity = "0";
+}
+
+var auth = (initials) => {
+  profile.style.display = 'none'
+  profileAuth.style.display = 'block'
+  console.log(initials)
+  paragraph.textContent = initials.toUpperCase();
+  paragraph.style.display = 'block' 
+}
+
+
+const emailCardInputLogin = document.getElementById('email-card-login');
+const passwordInputLogin = document.getElementById('password-login');
+
+loginSubmitButton.onclick = function() {
+  const password = passwordInputLogin.value;
+  const emailCard = emailCardInputLogin.value;
+
+  const savedPassword = localStorage.getItem('password');
+  const savedEmail = localStorage.getItem('email');
+  const savedCardNumber = localStorage.getItem('card-number');
+  
+
+  if (savedPassword && savedEmail && savedCardNumber) {
+    if ((password === savedPassword && emailCard === savedEmail) || (password === savedPassword && emailCard === savedCardNumber)) {
+      var initials = localStorage['firstName'][0] + localStorage['lastName'][0]
+      auth(initials);
+      modal_login.style.visibility = "hidden";
+      modal_login.style.opacity = "0";
+    } else {
+      alert("Неверный пароль, имейл или номер карты.");
+    }
+  } else {
+    alert("Пользователь не найден.");
+  }
+}
+
+
+ 
+console.log(localStorage)
+
+

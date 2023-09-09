@@ -25,9 +25,15 @@
                 </ul>
                 </nav>
                 <button id="profile-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                    <svg id="profile" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
                     </svg>
+                    <div id="profile-icon-authorized">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14Z" fill="white"/>
+                        </svg>
+                        <p class="initials-profile-icon"></p>
+                    </div>
                 </button>
                 <button class="burger-icon" id="burger-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="22" viewBox="0 0 45 22" fill="none">
@@ -124,11 +130,11 @@
                     <div class="form">
                         <h6>Login</h6>
                         <p>E-mail or readers card</p>
-                        <input type="text">
+                        <input type="text" id="email-card-login">
                         <p>Password</p>
-                        <input type="text">
+                        <input type="text" id="password-login">
                     </div>
-                    <button class="log-in">Log in</button>
+                    <button class="log-in" id="loginSubmitButton">Log in</button>
                     <div class="registration">
                         <p>Don&rsquo;t have an account?</p> 
                         <button>Register</button>
@@ -144,15 +150,15 @@
                     <div class="form">
                         <h6>Register</h6>
                         <p>First name</p>
-                        <input type="text">
+                        <input type="text" id="first-name-register">
                         <p>Last name</p>
-                        <input type="text">
+                        <input type="text" id="last-name-register">
                         <p>E-mail</p>
-                        <input type="text">
+                        <input type="text" id="email-register">
                         <p>Password</p>
-                        <input type="text">
+                        <input type="text" id="password-register">
                     </div>    
-                    <button class="log-in">Sign Up</button>
+                    <button class="log-in" id="registerSubmitButton">Sign Up</button>
                     <div class="registration">
                         <p>Already have an account?</p> 
                         <button>Login</button>
@@ -381,7 +387,7 @@
                                 <input type="text" placeholder="Reader's name">
                                 <input type="text" placeholder="Card number">
                             </div>
-                            <button type="submit">Check the card</button>
+                            <button type="button">Check the card</button>
                         </form>
                     </div>      
                     <div class="get-card">
