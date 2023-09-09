@@ -155,6 +155,8 @@ const profile = document.getElementById('profile');
 const profileAuth = document.getElementById('profile-icon-authorized');
 const paragraph = document.querySelector('.initials-profile-icon');
 
+const profileMenuAuth = document.getElementById('profile-menu-authenticated');
+
 
 registerSubmitButton.onclick = function() {
   const name = firstnameInput.value;
@@ -176,12 +178,21 @@ registerSubmitButton.onclick = function() {
   modal_register.style.opacity = "0";
 }
 
+
 var auth = (initials) => {
   profile.style.display = 'none'
   profileAuth.style.display = 'block'
   console.log(initials)
   paragraph.textContent = initials.toUpperCase();
-  paragraph.style.display = 'block' 
+  paragraph.style.display = 'block';
+ 
+  profileIcon.addEventListener('click', () => {
+    profileMenuAuth.style.visibility = "visible";
+    profileMenuAuth.style.opacity = "1";
+    profileMenu.style.visibility = "hidden";
+    profileMenu.style.opacity = "0";
+  });
+
 }
 
 
@@ -211,8 +222,26 @@ loginSubmitButton.onclick = function() {
   }
 }
 
+const myProfile = document.getElementById('my-profile');
+const modal_profile = document.querySelector('.modal-profile');
+const closeMyProfile = document.getElementById('close-btn-prof');
+const logOut = document.getElementById('log-out');
 
- 
+
+myProfile.addEventListener('click', () => {
+  modal_profile.style.visibility = "visible";
+  modal_profile.style.opacity = "1";
+});
+
+closeMyProfile.addEventListener('click', () => {
+  modal_profile.style.visibility = "hidden";
+  modal_profile.style.opacity = "0";
+});
+
+logOut.addEventListener('click', () => {
+  localStorage.clear();
+  console.log(localStorage)
+});
 console.log(localStorage)
 
 

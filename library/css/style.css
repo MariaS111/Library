@@ -96,6 +96,10 @@ header .profile-menu h6::after {
   transform: translateX(-50%);
   background-color: #BB945F;
 }
+header .authenticated button {
+  padding: 0;
+  white-space: nowrap;
+}
 header .burger-menu {
   display: flex;
   visibility: hidden;

@@ -101,6 +101,13 @@ header {
     }
 
 
+    .authenticated {
+        button {
+            padding: 0;
+            white-space: nowrap;
+        }
+    }
+
     .burger-menu {
         display: flex;
         visibility: hidden;
