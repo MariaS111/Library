@@ -21,7 +21,11 @@
 
     #About{
 
-        .images-container img:nth-child(4) {
+        .images-container img:nth-child(2),
+        .images-containe img:nth-child(3),
+        .images-containe img:nth-child(4),
+        .images-containe img:nth-child(5)
+         {
             display: none; 
         }
 

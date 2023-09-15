@@ -172,7 +172,8 @@ registerSubmitButton.onclick = function() {
   localStorage.setItem('lastName', lastName);
   localStorage.setItem('email', email);
   localStorage.setItem('card-number', cardNumber);
-  var initials = localStorage['name'][0] + localStorage['lastName'][0]
+
+  var initials = localStorage.getItem('firstName')[0] + localStorage.getItem('lastName')[0]
   auth(initials)
   modal_register.style.visibility = "hidden";
   modal_register.style.opacity = "0";
@@ -194,7 +195,6 @@ var auth = (initials) => {
   });
 
 }
-
 
 const emailCardInputLogin = document.getElementById('email-card-login');
 const passwordInputLogin = document.getElementById('password-login');
@@ -240,8 +240,69 @@ closeMyProfile.addEventListener('click', () => {
 
 logOut.addEventListener('click', () => {
   localStorage.clear();
-  console.log(localStorage)
+  console.log(localStorage);
+  profile.style.display = 'block';
+  profileAuth.style.display = 'none';
+  profileMenuAuth.style.visibility = "hidden";
+  profileMenuAuth.style.opacity = "0";
+  profileMenu.style.visibility = "visible";
+  profileMenu.style.opacity = "1";
+
+  profileIcon.addEventListener('click', () => {
+    profileMenuAuth.style.visibility = "hidden";
+    profileMenuAuth.style.opacity = "0";
+    profileMenu.style.visibility = "visible";
+    profileMenu.style.opacity = "1";
+  });
 });
 console.log(localStorage)
 
+const btn1 = document.getElementById('button1');
+const btn2 = document.getElementById('button2');
+const btn3 = document.getElementById('button3');
+const images = document.querySelectorAll('.images-container .img');
+const buttons = document.querySelectorAll('.button-circle');
 
+
+const imagesToDisplay = [
+  [1, 2, 3], 
+  [2, 3, 4], 
+  [4, 5, 3] 
+];
+
+if (buttons.length===5 && Array.from(buttons).every(button => getComputedStyle(button).display === 'block')){
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      buttons.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+      button.classList.add('active');
+  
+      images.forEach((image) => {
+        image.style.display = 'none';
+      });
+      console.log(index);
+      images.forEach((image, i) => {
+        image.style.display = i === index ? 'block' : 'none';
+      });
+
+    });
+  });
+}
+else{
+  buttons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+      buttons.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+      button.classList.add('active');
+  
+      images.forEach((image) => {
+        image.style.display = 'none';
+      });
+    images.forEach((image, i) => {
+      image.style.display = imagesToDisplay[index].includes(i + 1) ? 'block' : 'none';
+    });
+  });
+});
+}

@@ -207,246 +207,257 @@ main {
     left: 3px;
 }
 
-#Welcome {
-    background: url('../images/Welcome.jpg'), lightgray 50% / cover no-repeat;
-    height: 600px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    scroll-behavior: smooth;
+.modal-profile{
+    visibility: hidden;
+    opacity: 0;
+    width: 600px;
+    height: 400px;
+    background-color: $main-color;
+    color: $black-color;
     @include flex;
-    justify-content: center;
+    z-index: 102;
+    position: relative;
 
-
-    .close_btn:hover {
-        background-color: $main-color;
-        border: none;
+    .close_btn {
+        top: 25px;
+        right: 25px;
     }
 
-    .modal-profile{
-        visibility: hidden;
-        opacity: 0;
-        width: 600px;
-        height: 400px;
-        background-color: $main-color;
-        color: $black-color;
-        @include flex;
-        z-index: 120;
-        position: relative;
-
-        .close_btn {
-            top: 25px;
-            right: 25px;
-        }
-
-        p {
-            @include text;
-            font-size: 20px;            
-            line-height: 20px;
-        }
-
-        .left {
-            @include flex-col;
-            width: 170px;
-            height: 100%;
-            background-color: $black-color;
-            row-gap: 15px;
-
-            p{
-                @include flex;
-                justify-content: center; 
-                background-color: $main-color;
-                margin: 0;
-                padding: 0;
-                letter-spacing: normal;
-            }
-
-            .initials {                
-                width: 80px;
-                height: 80px;
-                color: $beige;
-            }
-
-            .name-surname {
-                color: $black-color;
-                width: 120px;
-                height: 30px;
-            }
-        }
-
-        .right {
-            @include flex-col;
-            align-items: flex-start;
-            height: 100%;
-            margin-left: 20px;
-            
-            p {
-                margin: 0;
-                padding-left: 0;
-            }
-            
-            h3 {
-               @include heading;
-               font-size: 40px;
-                line-height: 20px;
-                letter-spacing: 0.8px;
-                text-transform: uppercase;
-                margin-top: 0;
-                margin-bottom: 40px;
-            }        
-            
-            .bullet {
-                letter-spacing: 2px;
-            }
-            
-            .bullet::before {
-                content: '\2022'; 
-                color: black;
-                padding: 10px; 
-            }
-
-            .info {
-                @include flex;
-                column-gap: 20px;
-                margin-bottom: 20px; 
-                
-                p {
-                letter-spacing: 0.4px;
-                }
-
-                .number {
-                    font-size: 10px;
-                    line-height: 20px;
-                    letter-spacing: 0.2px;
-                }
-    
-            }
-
-            .icons {
-                @include flex-col; 
-                row-gap: 10px;
-            }
-
-            .head {
-                font-size: 25px;
-                letter-spacing: normal;
-                margin-bottom: 30px;
-            }
-
-            .first {
-                padding-bottom: 10px;
-            }
-
-            .card-number {
-                @include flex;
-                column-gap: 15px;
-                margin-top: 40px;
-            }
-
-            .card-number-color {
-                color: $beige;
-            }
-            
-            p {
-                letter-spacing: normal;
-            }
-
-           
-
-        }
-        
-        
+    p {
+        @include text;
+        font-size: 20px;            
+        line-height: 20px;
     }
 
-    .modal_login, 
-    .modal_register {
-        visibility: hidden;
-        opacity: 0;
-        width: 225px;
-        background-color: $main-color;
-        color: $black-color;
+    .left {
+        @include flex-col;
+        width: 170px;
+        height: 100%;
+        background-color: $black-color;
+        row-gap: 15px;
+
+        p{
+            @include flex;
+            justify-content: center; 
+            background-color: $main-color;
+            margin: 0;
+            padding: 0;
+            letter-spacing: normal;
+        }
+
+        .initials {                
+            width: 80px;
+            height: 80px;
+            color: $beige;
+        }
+
+        .name-surname {
+            color: $black-color;
+            width: 120px;
+            height: 30px;
+        }
+    }
+
+    .right {
         @include flex-col;
         align-items: flex-start;
-        padding-left: 25px;
-        margin-top: 5px;
-        z-index: 100;
-        position: relative;
-
-        h6 {
-            @include heading;
-            font-size: 20px;
-            line-height: 20px; 
-            letter-spacing: 0.4px;
-            text-transform: uppercase;
-            margin: 0;
-            margin-bottom: 10px;
-        }
-
+        height: 100%;
+        margin-left: 20px;
+        
         p {
             margin: 0;
-            @include text;
-            text-align: center;
-            font-size: 15px;
+            padding-left: 0;
+        }
+        
+        h3 {
+           @include heading;
+           font-size: 40px;
             line-height: 20px;
-            letter-spacing: 0.3px;
-            align-self: flex-start;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }        
+        
+        .bullet {
+            letter-spacing: 2px;
+        }
+        
+        .bullet::before {
+            content: '\2022'; 
+            color: black;
+            padding: 10px; 
         }
 
-        .log-in {
-            width: 75px;
-            height: 30px;
+        .info {
+            @include flex;
+            column-gap: 20px;
+            margin-bottom: 20px; 
+            
+            p {
+            letter-spacing: 0.4px;
+            }
+
+            .number {
+                font-size: 10px;
+                line-height: 20px;
+                letter-spacing: 0.2px;
+            }
+
+        }
+
+        .icons {
+            @include flex-col; 
+            row-gap: 10px;
+        }
+
+        .head {
+            font-size: 25px;
+            letter-spacing: normal;
+            margin-bottom: 30px;
+        }
+
+        .first {
+            padding-bottom: 10px;
+        }
+
+        .card-number {
+            @include flex;
+            column-gap: 15px;
+            margin-top: 40px;
+        }
+
+        .card-number-color {
+            color: $beige;
+        }
+        
+        p {
+            letter-spacing: normal;
+        }
+
+       
+
+    }
+    
+    
+}
+
+.modal_login, 
+.modal_register {
+    visibility: hidden;
+    opacity: 0;
+    width: 225px;
+    background-color: $main-color;
+    color: $black-color;
+    @include flex-col;
+    align-items: flex-start;
+    padding-left: 25px;
+    margin-top: 5px;
+    position: relative;
+
+    h6 {
+        @include heading;
+        font-size: 20px;
+        line-height: 20px; 
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin: 0;
+        @include text;
+        text-align: center;
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: 0.3px;
+        align-self: flex-start;
+    }
+
+    .log-in {
+        width: 75px;
+        height: 30px;
+        @include text;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+    }
+
+    .form {
+        @include flex-col;
+        row-gap: 10px;
+        margin-bottom: 20px;
+
+        input {
+            width: 195px;
+            height: 17px;
+        }
+    }
+
+
+    .registration{
+        @include flex;
+
+        p {
+            @include text;
+            text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+            font-size: 10px;
+            line-height: normal;
+            letter-spacing: normal;
+        }
+
+
+        button {
+            border: none;
             @include text;
             font-size: 10px;
             font-weight: 700;
             line-height: normal;
             letter-spacing: 1px;
-            text-transform: capitalize;
-            margin-bottom: 10px;
-        }
-
-        .form {
-            @include flex-col;
-            row-gap: 10px;
-            margin-bottom: 20px;
-
-            input {
-                width: 195px;
-                height: 17px;
-            }
-        }
-
-
-        .registration{
-            @include flex;
-
-            p {
-                @include text;
-                text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
-                font-size: 10px;
-                line-height: normal;
-                letter-spacing: normal;
-            }
-
-
-            button {
-                border: none;
-                @include text;
-                font-size: 10px;
-                font-weight: 700;
-                line-height: normal;
-                letter-spacing: 1px;
-                text-decoration-line: underline;
-            }
+            text-decoration-line: underline;
         }
     }
+}
 
-    .modal_login {
-        height: 262px;
-    }
-    
-    .modal_register {
-        height: 382px;
-    }
+.modal_login {
+    height: 262px;
+    z-index: 100;
+}
+
+.modal_register {
+    height: 382px;
+    z-index: 101;
+}
+
+
+.close_btn:hover {
+    background-color: $main-color;
+    border: none;
+}
+
+.modal-profile,
+.modal_login,
+.modal_register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+#Welcome {
+    background: url('../images/Welcome.jpg'), lightgray 50% / cover no-repeat;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    scroll-behavior: smooth;
+    position: relative;
+    @include flex;
+    justify-content: center;  
 
 }
 
@@ -523,6 +534,11 @@ h2::after {
     .images-container {
         display: flex;
         column-gap: 25px;
+    }
+
+    .images-container img:nth-child(4),
+    .images-container img:nth-child(5){
+        display: none;
     }
 
     .change-icon {
