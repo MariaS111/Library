@@ -13,7 +13,10 @@
     grid-template-rows: repeat(4, 1fr);
     row-gap: 38px;
   }
-  #About .images-container img:nth-child(4) {
+  #About .images-container img:nth-child(2),
+  #About .images-containe img:nth-child(3),
+  #About .images-containe img:nth-child(4),
+  #About .images-containe img:nth-child(5) {
     display: none;
   }
   #About .change-icon {
@@ -60,7 +63,6 @@
   #About .btns {
     margin-top: 0;
   }
-  #About .btns button:nth-child(4),
   #About .btns button:nth-child(5) {
     display: block;
   }
