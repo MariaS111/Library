@@ -24,9 +24,17 @@
                     <li><a href="#LibraryCard">Library Card</a></li>
                 </ul>
                 </nav>
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <button id="profile-icon">
+                    <svg id="profile" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM18.6667 7.77778C18.6667 10.3551 16.5774 12.4444 14.0001 12.4444C11.4227 12.4444 9.33339 10.3551 9.33339 7.77778C9.33339 5.20045 11.4227 3.11111 14.0001 3.11111C16.5774 3.11111 18.6667 5.20045 18.6667 7.77778ZM19.4998 16.2781C20.9584 17.7367 21.7778 19.715 21.7778 21.7778H14L6.22225 21.7778C6.22225 19.715 7.0417 17.7367 8.50031 16.2781C9.95893 14.8194 11.9372 14 14 14C16.0628 14 18.0411 14.8194 19.4998 16.2781Z" fill="white"/>
-                </svg>
+                    </svg>
+                    <div id="profile-icon-authorized">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                            <path d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14Z" fill="white"/>
+                        </svg>
+                        <p class="initials-profile-icon"></p>
+                    </div>
+                </button>
                 <button class="burger-icon" id="burger-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="22" viewBox="0 0 45 22" fill="none">
                     <line y1="1" x2="45" y2="1" stroke="white" stroke-width="2"/>
@@ -57,9 +65,111 @@
                     </ul>
                 </nav>
             </div>
+            <div class="profile-menu" id="profile-menu">
+               <h6>Profile</h6>
+               <button id="login-button">Log In</button>
+               <button id="register-button">Register</button>
+            </div>
+            <div class="profile-menu authenticated" id="profile-menu-authenticated">
+                <h6>Profile</h6>
+                <button id="my-profile">My profile</button>
+                <button id="log-out">Log Out</button>
+            </div>
         </header>
         <main>
-            <section id="Welcome">
+
+            <section id="Welcome">              
+                <div class="modal-profile">
+                    <button class="close_btn" id="close-btn-prof">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                        <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                        </svg>
+                    </button>
+                    <div class="left">
+                        <p class="initials">JD</p>
+                        <p class="name-surname">John Doe</p>
+                    </div>
+                    <div class="right">
+                        <h3>My profile</h3>
+                        <div class="info">
+                            <div class="icons">
+                                    <p>Visits</p>
+                                    <p>
+                                        <img src="images/user.svg" alt="">
+                                    </p> 
+                                    <p class="number">23</p>
+                            </div>
+                            <div class="icons">
+                                    <p>Bonuses</p>
+                                    <p>
+                                        <img src="images/star.svg" alt="">
+                                    </p> 
+                                    <p class="number">1240</p>
+                            </div>
+                            <div class="icons">
+                                <p>Books</p>
+                                <p>
+                                    <img src="images/book.svg" alt="">
+                                </p> 
+                                <p class="number">2</p>
+                        </div>
+                        </div>
+                        <p class="head">Rented books</p>
+                        <p class="bullet first">The Last Queen, Clive Irving</p>
+                        <p class="bullet">Dominicana, Angie Cruz</p>
+                        </ul>
+                        <div class="card-number">
+                            <p>Card number</p>
+                            <p class="card-number-color">F00234030</p>
+                            <img src="images/icon_copy.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal_login">
+                    <button class="close_btn" id="close-btn-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                        <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                        </svg>
+                    </button>
+                    <div class="form">
+                        <h6>Login</h6>
+                        <p>E-mail or readers card</p>
+                        <input type="text" id="email-card-login">
+                        <p>Password</p>
+                        <input type="text" id="password-login">
+                    </div>
+                    <button class="log-in" id="loginSubmitButton">Log in</button>
+                    <div class="registration">
+                        <p>Don&rsquo;t have an account?</p> 
+                        <button>Register</button>
+                    </div>
+                </div>
+                <div class="modal_register">
+                    <button class="close_btn" id = 'close-btn-2'>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <path d="M2 16.8507L17 2.00003" stroke="#0C0C0E" stroke-width="3"/>
+                        <path d="M2 2.14926L17 17" stroke="#0C0C0E" stroke-width="3"/>
+                        </svg>
+                    </button>
+                    <div class="form">
+                        <h6>Register</h6>
+                        <p>First name</p>
+                        <input type="text" id="first-name-register">
+                        <p>Last name</p>
+                        <input type="text" id="last-name-register">
+                        <p>E-mail</p>
+                        <input type="text" id="email-register">
+                        <p>Password</p>
+                        <input type="text" id="password-register">
+                    </div>    
+                    <button class="log-in" id="registerSubmitButton">Sign Up</button>
+                    <div class="registration">
+                        <p>Already have an account?</p> 
+                        <button>Login</button>
+                    </div>
+                </div>
                 <div class="welcome">
                     <h5>Welcome <br> to the Brooklyn <br> Library</h5>
                 </div>
@@ -68,22 +178,61 @@
                 <h2>About</h2>
                 <p>The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
                 <div class="images-container">
-                    <img src="images/arrow-left.svg" class="change-icon" alt="arrow-left">
-                    <img src="images/about1.png" alt="image1">
+                    <!-- <img src="images/arrow-left.svg" class="change-icon" alt="arrow-left"> -->
+                    <img class=img src="images/about1.png" alt="image1">
                     <img class="img" src="images/about2.png" alt="image2">
                     <img class="img" src="images/about3.png" alt="image3">
-                    <img src="images/arrow-right.svg" class="change-icon" alt="arrow-right">
+                    <img class="img" src="images/about4.png" alt="image4">
+                    <img class="img" src="images/about5.png" alt="image5">
+                    <!-- <img src="images/arrow-right.svg" class="change-icon" alt="arrow-right"> -->
                 </div>
                 <div class="btns">
-                    <button class="button-circle active"></button>
-                    <button class="button-circle"></button>
-                    <button class="button-circle"></button>
-                    <button class="button-circle"></button>
-                    <button class="button-circle"></button>
+                    <button class="button-circle active" id="button1"></button>
+                    <button class="button-circle" id="button2"></button>
+                    <button class="button-circle" id="button3"></button>
+                    <button class="button-circle" id="button4"></button>
+                    <button class="button-circle" id="button5"></button>
                 </div>
             </section>
             <section id="Favorites">
                 <h2>Favorites</h2>
+                <div class="modal-buy-card">
+                    <div class="modal-buy-card-header">
+                        <h3>Buy a library card</h3>
+                        <button class="close_btn" id="close-buy-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                <path d="M2 16.8507L17 2" stroke="white" stroke-width="3"/>
+                                <path d="M2 2.14929L17 17" stroke="white" stroke-width="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-buy-card-body">
+                        <div class="card-information">
+                            <div class="form">
+                                <p>Bank card number</p>
+                                <input type="text">
+                                <p>Expiration code</p>
+                                <span><input type="text"  class="low"><input type="text"  class="low"></span>
+                                <p>CVC</p>
+                                <input type="text" class="low indent">
+                                <p>Cardholder name</p>
+                                <input type="text">
+                                <p>Postal code</p>
+                                <input type="text">
+                                <p> City / Town</p>
+                                <input type="text">
+                            </div>
+                            <div class="buy-price">
+                                <button>Buy</button>
+                                <p class="price">$ 25.00</p>
+                            </div>
+                        </div>
+                        <p class="inf-buy-card">If you are live, work, attend school, or pay property taxes in New York State, 
+                            you can get a $25 digital library card right now using this online form. 
+                            Visitors to New York State can also use this form to apply for a temporary card.
+                        </p>
+                    </div>
+                </div>
                 <p class="bold favs-heading">Pick favorites of season</p>
                 <div class="radio-container">
                     <input type="radio" id="winter" name="season" checked>
@@ -108,7 +257,7 @@
                                 mind-eater son from tradition and certain death. Complete with dysfunctional family values,
                                 light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.</p>
                             </div>
-                            <button>Buy</button>      
+                            <button id="buy-button">Buy</button>      
                             <img src="images/book1.png" alt="book1">
                         </div>
                     </div>
@@ -132,7 +281,7 @@
                             <div class="info"><p>Auerbach's engaging book places the 'Comedy' within the tradition of epic, tragedy, and philosophy in general, arguing 
                                 for Dante's uniqueness as one who raised the individual and his drama of soul into something of divine significance—an inspired introduction to Dante's main themes.</p>
                             </div>
-                            <button>Buy</button>      
+                            <button disabled>Own</button>      
                             <img src="images/book3.png" alt="book3">
                         </div>
                     </div>
@@ -144,7 +293,7 @@
                             <div class="info"><p>A timely and revelatory new biography
                                 of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
                             </div>
-                            <button disabled>Own</button>      
+                            <button>Buy</button>      
                             <img src="images/book4.png" alt="book4">
                         </div>
                     </div>
@@ -246,7 +395,7 @@
                                 <input type="text" placeholder="Reader's name">
                                 <input type="text" placeholder="Card number">
                             </div>
-                            <button type="submit">Check the card</button>
+                            <button type="button">Check the card</button>
                         </form>
                     </div>      
                     <div class="get-card">
